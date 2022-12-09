@@ -1,0 +1,188 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+/* Font Awesome */
+//chemin d'accès relatif FontAwesome icônes en vue d'utilisation dans les fichiers SCSS
+//$fa-font-path:"assets/fontawesome/scss/font-awesome";
+$fa-font-path:"/assets/fontawesome/webfonts/";
+$fas-font-path:"/assets/fontawesome/webfonts/";
+
+/* ================================================================================ */
+/* ================================== Fonts ===================================  */
+/* ** Police de Référence ** */
+
+$fontSize: 16px;
+
+$fonth1 : 'Goodtimes', sans-serif;
+$fonth2 : 'Goodtimes', sans-serif;
+$fonth3 : 'Goodtimes', sans-serif;
+$fonth4 : 'Continuum', sans-serif;
+$fonth5 : 'Continuum', sans-serif;
+$fonth6 : 'Continuum', sans-serif;
+
+$fontp: 'Glacial_regular', sans-serif;
+$fonta: 'ubuntu_condensedregular', sans-serif;
+$fontah: 'ubunturegular', sans-serif;
+
+$fontBlockquote : 'oxaniummedium', sans-serif;
+
+$fontCite : 'ubuntuitalic', sans-serif;
+$fontLegend: 'ubuntuitalic', sans-serif;
+
+$fontLabel :  'ubunturegular', sans-serif;
+$fontInput :  'ubunturegular', sans-serif;
+$fontSelect :  'ubunturegular', sans-serif;
+
+$fontMeta: 'ubuntu_condensedregular', sans-serif;
+$fontpre:'courier_newregular' , 'courier new', courier, monospace;
+$fontpre2: 'Droid' , 'courier new', courier, monospace;
+
+$fontNav: 'oxaniumregular', sans-serif;
+$fontNavHvr: 'oxaniumsemibold', sans-serif;
+
+
+/* ================================================================================ */
+/* ================================== Couleurs ===================================  */
+/* ** Taille d'écran de référence ** */
+/* landscape */
+$vwLRefLandscape: 576px;
+$vhLRefLandscape: 100%;
+/* Portrait */
+$vwPRefPortait: $vwLRefLandscape;
+$vhPRefPortait: $vhLRefLandscape;
+/* Références à utiliser */
+$vwLRef: 576px;
+$vhLRef: $vhLRefLandscape;
+
+$deviceWidth: 576px;
+//$1vw: (math.div($deviceWidth ,100)) * 1vw;
+
+/* ================================================================================ */
+/* ================================== Couleurs  à disposition ===================================  */
+
+/* Door colors*/
+//$doorMove : #16181F;
+$doorMove : #0e0d08;
+$doorFixed : lighten($doorMove,1);
+
+
+/* ==================================================================================================== */
+/* ================================== Variables barre de navigation ===================================  */
+// largeur de la nav
+$navWidth : 60vw;
+$navHeight : 100%;
+$navVpadding: 1.5rem;
+$navHpadding: 2rem;
+
+// ul
+$ulgap : $navWidth * .01;
+$ulVpadding : .2rem;
+$ulHpadding : .5rem;
+
+// ul block nav
+$ulBpadding1 : .4rem .2rem .4rem .5rem;
+$ulBpadding2 : .4rem .2rem .4rem 1rem; 
+
+
+$liVpadding : .5rem;
+$liHpadding : .8rem;
+
+// Couleurs pour la navbar
+$darkNavBkgd : $doorMove;
+$lessDarkNavBkgd: lighten($doorMove,1);
+//$baseFontClr :#6A1B9A;
+$baseFontClr :#443513;
+
+/* Style de la page */
+// backgrounds
+$lighterBckgrd : #BBB476;
+$lightBckgrd : darken($lighterBckgrd,20);
+$regularBckgrd : darken($lighterBckgrd,40);
+$darkBckgrd : darken($lighterBckgrd,60);
+$darkerBckgrd : darken($lighterBckgrd,80);
+//  p fontColors
+$fntLighterBckgrd : $darkerBckgrd;
+$fntLightBckgrd : $darkBckgrd;
+$fntRegularBckgrd : lighten(saturate(adjust-hue($lighterBckgrd, 1),1.33),1.22);
+$fntDarkBckgrd : $lightBckgrd;
+$fntDarkerBckgrd : $lighterBckgrd;
+//  h6 fontColors
+$fnth6LighterBckgrd : saturate($fntLighterBckgrd,20);
+$fnth6LightBckgrd : saturate($fntLightBckgrd,20);
+$fnth6RegularBckgrd : saturate($fntRegularBckgrd,20);
+$fnth6DarkBckgrd : saturate($fntLighterBckgrd,20);
+$fnth6DarkerBckgrd : saturate($fntDarkBckgrd,20);
+//  h5 fontColors
+$fnth5LighterBckgrd : saturate($fntLighterBckgrd,40);
+$fnth5LightBckgrd : saturate($fntLightBckgrd,40);
+$fnth5RegularBckgrd : saturate($fntRegularBckgrd,40);
+$fnth5DarkBckgrd : saturate($fntLighterBckgrd,40);
+$fnth5DarkerBckgrd : saturate($fntDarkBckgrd,40);
+//  h4 fontColors
+$fnth4LighterBckgrd : saturate($fntLighterBckgrd,60);
+$fnth4LightBckgrd : saturate($fntLightBckgrd,60);
+$fnth4RegularBckgrd : saturate($fntRegularBckgrd,60);
+$fnth4DarkBckgrd : saturate($fntLighterBckgrd,60);
+$fnth4DarkerBckgrd : saturate($fntDarkBckgrd,60);
+//  h3 fontColors
+$fnth3LighterBckgrd : saturate($fntLighterBckgrd,80);
+$fnth3LightBckgrd : saturate($fntLightBckgrd,80);
+$fnth3RegularBckgrd : saturate($fntRegularBckgrd,80);
+$fnth3DarkBckgrd : saturate($fntLighterBckgrd,80);
+$fnth3DarkerBckgrd : saturate($fntDarkBckgrd,80);
+//  h2 fontColors
+$fnth2LighterBckgrd : saturate($fntLighterBckgrd,90);
+$fnth2LightBckgrd : saturate($fntLightBckgrd,90);
+$fnth2RegularBckgrd : saturate($fntRegularBckgrd,90);
+$fnth2DarkBckgrd : saturate($fntLighterBckgrd,90);
+$fnth2DarkerBckgrd : saturate($fntDarkBckgrd,90);
+
+
+/* ============================================================================================= */
+/* ================================== Variables des boutons ===================================  */
+
+/* taille des boutons */
+
+$btnWidth : 25rem;
+$btnHeight: 150px;
+$aspectRatio : 250/80;// ATTENTION : valeur entre 0 & 1
+/* ============================= Bouton Burger =============================  */
+$burgerSize : 2rem;
+$scaleHover : 1.1;
+$burgerColor : #e4e4e4;
+
+/* ============================= Bouton Burger =============================  */
+
+$crossCloserSize : 1.5rem;
+$crossCloserScaleHover : 1.1;
+$crossCloserColor : #e4e4e4;
+
+/* ============================= Boutons isolés =============================  */
+// pour la mixin flexBtn
+$wide : 250px;
+$aspectRatio : 2.8; /* 250/90 */
+
+
+/* ============================= Couleurs utilisées =============================  */
+/* ====== Couleurs dominantes et variantes  : pour chaque, de foncé à clair ======  */
+
+$primaryBtnClr : $doorMove ;
+$primaryBtnClrHvr : lighten($primaryBtnClr, 20%);
+$primaryBtnClrActive :darken($primaryBtnClr, 20%) ;
+
+$secondaryBtnClr : $primaryBtnClr ;
+$secondaryBtnClrHvr : lighten($secondaryBtnClr, 20%);
+$secondaryBtnClrActive :darken($secondaryBtnClr, 20%);
+
+$thirdBtnClr : $secondaryBtnClr;
+$thirdBtnClrHvr : lighten($thirdBtnClr, 20%);
+$thirdBtnClrActive :darken($thirdBtnClr, 20%);
+
+$fourthBtnClr : $thirdBtnClr ;
+$fourthBtnClrHvr : lighten($fourthBtnClr, 20%);
+$fourthBtnClrActive :darken($fourthBtnClr, 20%);
+
+$fifthBtnClr : $fourthBtnClr;
+$fifthBtnClrHvr : lighten($fifthBtnClr, 20%);
+$fifthBtnClrActive :darken($fifthBtnClr, 20%);
+

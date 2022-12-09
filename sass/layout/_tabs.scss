@@ -1,0 +1,53 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+.tab-content{
+    display:none;
+}
+
+.tabs .active a{
+    color:#444;
+    background-color:#FFFFFF;
+    font-weight:bold;
+}
+.tab-content.active{
+display: block;
+}
+.tabs li{
+    float : left;
+    display: block
+}
+.tabs:after{ /* ensemble de propriétés qui permettent de nettoyer les précédent "float"*/
+    content: " ";
+    display:table;
+    clear: both;
+}
+.tabs a {
+    display:inline-block;
+    background-color: #EEEEEE;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    padding: 10px 15px;
+}
+
+.tab .active a{
+background-color: #FFFFFF;
+}
+
+.tabs-content{
+    position: relative;
+    z-index: 3; /* permet de faire passer l'onglet sélectionné au dessus des autres*/
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-bottom: 20px;
+}
+
+.tab-content{
+    display: none;
+}
+
+.tab-content.active{
+    display: block;
+}
+
+

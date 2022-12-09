@@ -1,0 +1,231 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+
+/* Boutons classiques */
+
+.details{
+    @include flexBtn;
+    width: 45%;
+    font-family: $fonta;
+    aspect-ratio: 900/90;
+    background-color: $darkBckgrd;
+    color: $lightBckgrd;
+    margin:auto;
+    padding : .5rem 1rem;
+    &:hover{
+        background-color: $lightBckgrd;
+        color: $darkBckgrd;
+    }
+}
+
+/* Boutons action */
+
+.actionsBtns{
+    @include flexBtn;
+    width: 100%;
+    font-family: $fonta;
+    aspect-ratio: 900/90;
+    background-color: $regularBckgrd;
+    color: $fntDarkerBckgrd;
+    border-radius: 6px;
+    margin:auto;
+    max-height: 10vh;
+    padding: .4rem .2rem;
+    &:hover{
+        background-color: color.scale($lighterBckgrd, $lightness : -90%);
+        color: $fntDarkerBckgrd;
+        border: solid 2px $fntDarkerBckgrd;
+        cursor: pointer;
+    }
+}
+
+.details{
+    @include flexBtn;
+    width: 45%;
+    font-family: $fonta;
+    aspect-ratio: 900/90;
+    background-color: $darkBckgrd;
+    color: $lightBckgrd;
+    border-radius: 6px;
+    margin:auto;
+    &:hover{
+        background-color: $lightBckgrd;
+        color: $darkBckgrd;
+    }
+}
+
+/* ============================= Bouton Burger =============================  */
+//Boutons Burger
+
+.btnBurger{
+    align-content: space-between;
+    display: flex;
+    height:$burgerSize;
+    justify-content: center;
+    margin:auto;
+    position:relative;
+    transition:all 150ms ease-in-out;
+    width:$burgerSize;
+    z-index: 3;
+    align-content: space-between;
+    animation : clickBurger infinite 15000s backwards infinite;
+    &:hover{
+        cursor: pointer;
+        transform:scale($scaleHover);
+    }
+    &:hover > &__Top{
+        // border-radius: 50px;
+        border-bottom-left-radius:0 ;
+        border-top-left-radius:0 ;
+        transform: rotate(-45deg) translateY(.25rem);
+        background-color: $fntDarkBckgrd
+    }
+    &:hover > &__Middle{
+        display: none;
+    }
+    &:hover > &__Bottom{
+        // border-radius: 50px;
+        border-bottom-left-radius:0 ;
+        border-top-left-radius:0 ;
+        transform: rotate(45deg) translateY(-.25rem);
+        background-color: $fntDarkBckgrd;
+    }
+    &__top{
+        background-color: $lighterBckgrd;
+        border-radius: 50px;
+        display:block;
+        height: $burgerSize * .1;
+        position:absolute;
+        top:0;
+        transition:all 150ms ease-in-out;
+        width: $burgerSize;
+        z-index: 4;
+    }
+    &__middle{
+        background-color: $lighterBckgrd;
+        border-radius: 50px;
+        display:block;
+        height: $burgerSize * .1;
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+        transition:all 150ms ease-in-out;
+        width: $burgerSize;
+        z-index: 4;
+    }
+    &__bottom{
+        background-color: $lighterBckgrd;
+        bottom:0;
+        border-radius: 50px;
+        display:block;
+        height: $burgerSize * .1;
+        position:absolute;
+        transition:all 150ms ease-in-out;
+        width: $burgerSize;
+        z-index: 4;
+    }
+} 
+
+/* ============================= Bouton closeCross =============================  */
+
+.btnClose{
+    align-content: space-between;
+    animation-delay: 2000ms;
+    animation-duration: 2400ms;
+    animation-name: bumpCloseBtn;
+    animation-iteration-count: infinite;
+    //animation: bumpCloseBtn infinite 3500ms;
+    //background-color: blue; // Pour test uniquement
+    display: flex;
+    height:$crossCloserSize;
+    justify-content: center;
+    margin:2rem auto;
+    position:relative;
+    transition: hover 150ms ease-in-out;
+    width:$crossCloserSize;
+    &:hover{
+        color:$regularBckgrd;
+        cursor: pointer;
+    }
+    &__firstBar{
+        background-color: $crossCloserColor;
+        border-radius: 50px;
+        height: .2rem;
+        position:absolute;
+        transition:all 150ms ease-in-out;
+        top:50%;
+        transform: rotate(-45deg) translateY(-25%);
+        width: 100%;
+        &:hover{
+            box-shadow: 0 0 25px $lighterBckgrd;
+        }
+    }
+    &:hover > &__firstBar{
+        background-color: $fntRegularBckgrd;
+        box-shadow: 0 0 25px $lighterBckgrd;
+        transform: rotate(-135deg);
+    }
+    &:hover > &__secondBar{
+        background-color: $fntRegularBckgrd;
+        box-shadow: 0 0 25px $lighterBckgrd;
+        transform: rotate(135deg);
+    }
+    &__secondBar{
+        background-color: $crossCloserColor;
+        border-radius: 50px;
+        height: .2rem;
+        position:absolute;
+        transition:all 150ms ease-in-out;
+        top:47%;
+        transform: rotate(45deg) translateY(20%);
+        width: 100%;
+        &:hover{
+            box-shadow: 0 0 25px $lighterBckgrd;
+        }
+    }
+
+}
+.btnNav{
+    @include flexBtn;
+    aspect-ratio: 5;
+    background-color: $darkerBckgrd;
+    width: 90%;
+    margin-left:1rem;
+    &:hover{
+        border: 2px solid $lighterBckgrd;
+        cursor: pointer;
+
+    }
+    &:hover > a{
+        color: lighten($lighterBckgrd, 20);
+        cursor: pointer;
+        font-family: $fontah !important;
+    }
+    & a{
+        color: $fntDarkerBckgrd;
+        display:flex;
+        @include flexVtopHleft;
+        font-family: $fonta;
+        font-weight: 300;
+        text-align: left;
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+
+    }
+}
+
+/*SCROLL BAR*/
+::-webkit-scrollbar{
+    width: 1rem; /*largeur de la scrollbar verticale*/
+    height: 1%; /*hauteur de la scrollbar horizontale*/
+  }
+  ::-webkit-scrollbar-track {
+   background: $darkerBckgrd; /*couleur du fond de la scrollbar*/
+    border: 2vw solid $lighterBckgrd;  /*bordure*/
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $lighterBckgrd; /*couleur de l'ascenseur*/;
+    border: 1vw solid $darkBckgrd ; /*bordure de l'ascenseur*/
+  }
+  /*FIN SCROLLBAR*/

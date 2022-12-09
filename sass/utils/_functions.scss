@@ -1,0 +1,28 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+
+@function rem($pixel){
+    @return math.div($pixel,$fontSize) *1rem;
+}
+
+@function vw($pixel){
+    @return math.div($pixel,$vwRef) *1vw;
+}
+
+@function vh($pixel){
+    @return math.div($pixel,$vhRef) *1vh;
+}
+
+ @function vl($pixel){
+    @return $pixel;
+ }
+
+@function textcolor($background-color){
+    @if (lightness($background-color) > 40) {
+        @return #000;
+    }
+    @else {
+        @return #FFF;
+    }
+}

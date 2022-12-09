@@ -1,0 +1,115 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+
+@mixin btn__nav{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    align-content:center;
+    width:350px;
+    aspect-ratio: 350/100;
+    padding:1rem 2rem .8rem 2rem;
+    margin:auto;
+    text-decoration: none;
+    position:relative;
+    padding:1rem 2.5rem .8rem 2rem;
+    &:before{
+        content:">";
+        position:absolute;
+        top:50%;
+        transform: translateY(-50%) rotate(90deg);
+        right:10px;
+    }
+}
+
+// @mixin darkBckgrd{
+    
+// }
+
+
+/* ========================= Mixins Flex =========================*/
+@mixin flexBtn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: $btnWidth;
+    aspect-ratio: $aspectRatio;
+}
+
+// flex Menu
+@mixin flexVmenu{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: $ulgap;
+    @include flexVcenterHcenter;
+}
+
+@mixin flexHmenu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: $ulpadding;
+    gap: $ulgap;
+}
+
+@mixin ulpadding{
+    padding-top: rem;
+    padding-right: rem;
+    padding-bottom: rem;
+    padding-left: rem;
+}
+// flex align top
+@mixin flexVtopHcenter{
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin flexVtopHleft{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flexVtopHright{
+    justify-content: flex-end;
+    align-items:center;
+}
+
+// flex align middle
+
+@mixin flexVcenterHcenter{
+    justify-content: center;
+    align-items:center;
+}
+
+@mixin flexVcenterHleft{
+    justify-content: flex-start;
+    align-items:center;
+}
+
+@mixin flexVcenterHright{
+    justify-content: flex-end;
+    align-items:center;
+}
+
+// flex align bottom
+
+@mixin flexVbottomHcenter{
+    justify-content: center;
+    align-items:flex-end;
+}
+
+@mixin flexVbottomHleft{
+    justify-content: flex-start;
+    align-items:flex-end;
+}
+
+@mixin flexVbottomHright{
+    justify-content: flex-end;
+    align-items:flex-end;
+}
+
+
+/* */

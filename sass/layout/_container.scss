@@ -1,0 +1,271 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+
+
+
+/* ============================== SECTIONS ============================== */
+// Section landingPage
+
+.landingPage{
+    display:block;
+    width:100%;
+    background-color:$darkBckgrd ;
+    padding-top: 10%;
+    margin: 10vh auto 0 auto;
+    &__landingBlocks{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: 2rem  1rem;
+        gap: 1rem;
+        &__title{
+            text-align: center;
+            font-size: 2rem;
+            color: lighten($lightBckgrd,70);
+        }
+        &__subTitle{
+            text-align: center;
+            font-size: 1rem;
+            color: $lighterBckgrd;
+        }
+        &__img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            height: auto;
+            &__photo{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    &__logoBlocks{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        &__container{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 0 auto;
+            max-width: 100%;
+            min-width: 99vw;
+            width: 100%;
+            &__lang{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                width: 70px;
+                height:auto;
+                align-items: center;
+                //transition: transform 150ms ease-in;
+                &__title{
+                    color: $fntDarkerBckgrd;
+                    font-size: 1.25rem;
+                    margin-bottom: .9rem;
+                    transition: transform 150ms ease-in;
+                }
+                &__logo{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 70px;
+                    height:auto;
+                    background-color: none;
+                    transition: transform 150ms ease-in;
+                    & img{
+                        max-width: 100%;
+                        max-height: 100%;
+                    }        
+                } 
+                &:hover > &__title{
+                    text-shadow: 0 0 2rem #FFFFFF;
+                    transform: scale(1.3);
+                }
+                &:hover +  img{
+                    background: none;
+                    box-shadow: 0 0 2rem $lighterBckgrd;
+                }
+                &:hover > &__logo{
+                    transform: scale(1.3);
+                }
+            }        
+        }        
+    }
+    &__logoDesc{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        padding:1rem;
+        &__content{
+            display: inline-block;
+            text-align: left;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            color:#fff;
+            font-size: .9rem;
+            --max-lines : 17;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: var(--max-lines);
+            width: 100%;
+        }
+    }
+}
+
+// Section parcours
+.global{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+    border-top: 5px outset $lightBckgrd;
+    box-shadow: 0 0 10px $lightBckgrd;
+    & h3{    
+        max-width: 90%;
+        text-align: center;
+        margin: auto;
+        padding:2rem 0;
+        color:$fntDarkerBckgrd;
+    }
+    &__timeline{
+        display: block;
+        width:100%;
+    }
+}
+
+//Section tabs - ceQuiVousAttends
+.tabBlock{
+    position:relative;
+    width:100%;
+    //max-height: max-content;
+    min-height: max-content;
+    &__b{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: space-around;
+        margin:auto;
+        width:100%;
+        &__sb{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: space-around;
+            min-width: 100%;
+            width:100%;
+            background-color: $lighterBckgrd;
+            padding:4rem;
+            gap : 2rem
+        }
+        &__sb:nth-child(2n){
+            border-right: thin solid $fntLighterBckgrd;
+            background-color: $lightBckgrd;
+        }
+    }
+}
+
+@media screen and (max-width: 1002px){
+    .landingPage{
+
+        &__landingBlocks{
+
+            &__title{
+
+            }
+            &__subTitle{
+
+            }
+            &__img{
+
+                &__photo{
+
+                }
+            }
+        }
+        &__logoBlocks{
+
+            &__container{
+
+                &__lang{
+
+                    &__title{
+
+                    }
+                    &__logo{
+
+                        & img{
+
+                        }        
+                    } 
+                }        
+            }        
+        }
+        &__logoDesc{
+
+            &__content{
+
+            }
+        }
+    }
+    
+    // Section parcours
+    .global{
+
+        & h3{    
+
+        }
+        &__timeline{
+
+        }
+    }
+
+    //Section tabs - ceQuiVousAttends
+    .tabBlock{
+        &__b{            
+            &__sb{
+            }
+            &__sb:nth-child(2n){
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1503px){
+    .tabBlock{
+
+        &__b{
+            flex-direction: row;
+            flex-wrap: wrap;
+            height:100%;
+            &__sb{
+                max-width: 40%;
+                width:100%;
+                background-color: $lighterBckgrd;
+                padding:4rem;
+                gap : 2rem;
+                max-height: max-content;
+            }
+            &__sb:nth-child(2n){
+                min-height: 100%;
+                max-height: max-content;
+                min-height: 100%;
+                height:100%;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,75 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+
+.timeline{
+    z-index: 0;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    padding:1rem;
+    background-color:$lighterBckgrd;
+    margin: 1rem auto;
+    position: relative;
+    &__bar{
+        z-index: 1;
+        position:absolute;
+        width: .5rem;
+        height: 100%;
+        top:0;
+        left:50%;
+        transform:translateX(-50%);
+        background-color: $darkBckgrd;
+    }
+}
+.timeBlock{
+    z-index: 0;
+    display: flex;
+    padding:1rem;
+    gap:1rem;
+    max-width: 50%;
+    &__content{
+        display:flex;
+        flex-direction: column;
+        &__dates{
+            padding : .5rem .8rem;
+            background-color: lighten($lighterBckgrd,50);
+        }
+    }
+}
+.left{
+    text-align: left;
+    justify-self: flex-end;
+    transform: translateX(100%);
+    position:relative;
+    margin-left:0;
+    width: 50%;
+}
+.left::before{
+content: '';
+    position: absolute;
+    left: -1rem;
+    top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    background-color: $darkBckgrd;
+}
+.right{
+    text-align: right;
+    justify-content: flex-end;
+    position: relative;
+    margin-right:0;
+    width: 50%;
+}
+.right::before{
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50px;
+    background-color: $darkBckgrd;
+}
+

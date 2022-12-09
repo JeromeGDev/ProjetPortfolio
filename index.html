@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<!-- Conventions require comments to be written in English, so I will try to do it everywhere - There may be some oversights -->
+<head>
+	<!-- Here, I make a description of a significant amount of meta tag to insert in the head part - not visible - I indicate them on this first page and insert them on all pages for an online, but for the realization of the project without putting them online I will only mention them on the first page and will resume on the other pages only the minimum tags essential to the functioning of the page -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" type="image/x-icon" href="/assets/img/icone-JGDev-2022.ico">
+	<title>JeromeGDev, Développeur Web</title>
+	<meta name="description" content="Webmaster et Graphiste depuis 2009, Intégrateur depuis 2020, Développeur Web et WebMobile. Création de sites web 100% personnalisés Ccode custom ou CMS">
+	<meta name="keywords" content="webdesign,webdesigner,création de,creation de, de sites,de site,sites web,site web,sites internet,site internet,sites custom,sites personnalisés,développeur web">
+
+	<!-- Font Awesome Cascading Style Sheet (CSS) -->
+	<link rel="stylesheet" media="all" href="assets/fontawesome/css/all.css"><!-- File developed for possible modifications - to be minified for online use (see line below)-->
+	<!--<link rel="stylesheet" media="all" href="assets/fontawesome/css/all.min.css">Minified file: USE in production as is, if "all" file remain not modified", but if the "all" file version is modified, then it must be minified as well -->
+
+	<!-- Personnal Cascading Style Sheet (CSS) -->
+	<!-- Placed after the other style sheets in order to be spur, that it is the last read that is taken into account -->
+	<!-- Indication: For this project, as I used to do, I use SASS and pattern 7-1 that compils SASS (SCSS files in the style.css file, used for the website)-->
+	<link rel="stylesheet" media="all" href="assets/css/style.css"><!-- Personal css file not minified but more readable in development mode -->
+	<!--<link rel="stylesheet" media="all" href="assets/css/style.min.css">Minified personal css file for use in production - not used for the project at this time -->
+	
+	<!-- ========================================================================================================================================================== -->
+	<!-- ========================================================================================================================================================== -->
+	
+	<!-- JE PRÉSENTE, CI-DESSOUS DES BALISES A UTILISER EN TEMPS NORMAL, MAIS QUE JE NE RENSEIGNERAI PAS POUR CE PROJET : INUTILE PUISQUE NON PRÉSENTÉ EN LIGNE -->
+	<!-- detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
+	<!--<meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1" />-->
+	
+	<!-- <link rel="canonical" href="" />Tells search engines the url of the page that is the original source of the content - Not used in this project -->
+	<!-- ========================================================================================================================================================== -->
+	<!-- open graph meta tags for social sites and search engines -->
+	<!-- OpenGraph tags make it possible to give indications on the content of the page especially for social networks and mainly Facebook -->
+	<!--<meta property="og:locale" content="fr_FR" />-->
+	<!--<meta property="og:type" content="website" />-->
+	<!--<meta property="og:title" content=" TITRE DE LA PAGE " />-->
+	<!--<meta property="og:description" content="  #description." />-->
+	<!--<meta property="og:url" content="" />-->
+	<!--<meta property="og:site_name" content="" />-->
+	<!--<meta property="og:image" content="images//hom-banner-compressed.jpg" />--> <!-- Specifies images'url that the social network should display as an illustration -->
+	<!--<meta property="og:image:secure_url" content="images//hom-banner-compressed.jpg" />--><!-- Specifies compressed (lower quality - faster loading - images'url that the -!>social network should display as an illustration -->
+	<!--<meta property="og:image:width" content="1200" />-->
+	<!--<meta property="og:image:height" content="660" />-->
+	
+	<!-- ========================================================================================================================================================== -->
+	<!--twitter description-->
+	<!--<meta name="twitter:card" content="summary_large_image" />-->
+	<!--<meta name="twitter:description" content="." />-->
+	<!--<meta name="twitter:title" content="" />-->
+	<!--<meta name="twitter:site" content="@" />-->
+	<!--<meta name="twitter:image" content="images/hom-banner-compressed.jpg" />-->
+	<!--<meta name="twitter:creator" content="@" />-->
+	
+	<!-- ========================================================================================================================================================== -->
+	<!--Open Graph tags for location or address for information panel in Google location tool -->
+	<!--This information will be taken over by Google in order to provide information about the company and its location - Very useful in terms of SEO -->
+	<!-- There are online utilities that allow you to analyze and establish the OG data to be filled in  : https://searchenginereports.net/fr/open-graph-generator or Google Tools : https://www.google.com/webmasters/markup-helper/ and there are many other online tools-->
+	<!--<meta name="og:latitude" content="" />-->
+	<!--<meta name="og:longitude" content="" />-->
+	<!--<meta name="og:street-address" content="" />-->
+	<!--<meta name="og:locality" content="" />-->
+	<!--<meta name="og:region" content="" />-->
+	<!--<meta name="og:postal-code" content="" />-->
+	<!--<meta name="og:country-name" content="" />-->
+	
+	<!-- ========================================================================================================================================================== -->
+	<!--search engine verification--><!-- Codes de vérification de propriété fournis dans les consoles dans moteurs de recherche lors de la soumission du site. Exemple : Google Search Console -->
+	<!--<meta name="google-site-verification" content="" />--><!-- Non utilisée ici -->
+	<!--<meta name="yandex-verification" content="" />--><!-- Non utilisée ici -->
+	<!--<meta name="bing-verification" content="" />--><!-- Non utilisée ici -->
+	
+	<!-- ========================================================================================================================================================== -->
+	<!-- Site favicon icons --><!--provides links to the icons that will be displayed in the tab among others - Several size proposed -->
+	<!--<link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-32x32.png" sizes="32x32" />-->
+	<!--<link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-192x192.png" sizes="192x192" />-->
+	<!--<link rel="apple-touch-icon-precomposed" href="images/icon/cropped-cropped-favicon-1-1-180x180.png" />-->
+	<!--<meta name="msapplication-TileImage" content="images/icon/cropped-cropped-favicon-1-1-270x270.png" />-->
+	
+	<!-- ========================================================================================================================================================== -->
+	<!--complete list of meta tags at -https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML or her : https://gist.github.com/lancejpollard/1978404
+	There is a large amount of other meta tags that can be added. These tags will be useful to optimize the SEO of the site
+	there tags can be added, for example, meta tags for cache management, its lifetime, indicate the author of the page, indicate a copyright, etc. -->
+	
+</head>
+<body>
+	<div class="door" id="doorBlock">
+		<div class="door__blocks ">
+			<div class="door__blocks__firstBlock" id="leftDoor"></div>
+			<div class="door__blocks__logoBlock" id="logoContainer">
+				<blockquote >Webmaster Développeur Web </blockquote>
+				<div class="door__blocks__logoBlock__logo" id="doorsOpener">
+					<img src="assets/img/jeromeGeoffroy-developpeur-web-mnscrpt.png" alt="logo tuto jgdev" class="logo ">
+					<p  id="toAnimate">CLIQUER SUR LE LOGO POUR ENTRER</p>
+				</div>
+				
+				<blockquote >Création de Sites Web Custom</blockquote>
+			</div>
+			<div class="door__blocks__secondBlock " id="rightDoor"></div>
+		</div>
+	</div>
+	<header class="header">
+
+	
+		<div class="header__btnBurgerBlock">
+			<div class="btnBurger" id="burger">
+				<div class="btnBurger__top"></div>
+				<div class="btnBurger__middle"></div>
+				<div class="btnBurger__bottom"></div>
+			</div>
+		</div>
+		
+		
+		<div class="header__logo">
+			<h1 class="header__logo__title">
+			<img src="assets/img/jeromeGeoffroy-developpeur-web-typescrpt.png" alt="logo jgdev" class="header__logo__logo ">
+			</h1>
+		</div>
+
+		<nav class="navContainer" id="navBar">
+				<div class="btnClose" id="closerBtn">
+					<div class="btnClose__firstBar"></div>
+					<div class="btnClose__secondBar"></div>
+				</div>
+				<ul class="navContainer__container" id="navMenu">
+					<div class="navContainer__container__ulBlock">
+						<ul class="navContainer__container__ulBlock__actions">
+							<li class="actionsBtns"><a href="/contact-webmaster.html" target="_blank">Me Contacter</a></li>
+						</ul>
+						<nav class="navContainer__container__ulBlock">
+
+							<ul class="mainNav__list navBlock listNone level-0">
+								<li class="navBlock__list btnNav"><a href="#landingPage" class="navBlock__list__link">Qui suis-je ?</a></li>
+								<li class="navBlock__list btnNav"><a href="#parcoursAtypique" class="navBlock__list__link">Un parcours atypique</a></li>
+								<li class="navBlock__list btnNav"><a href="#portfolio" class="navBlock__list__link">Portfolio</a></li>
+								<li class="navBlock__list btnNav"><a href="#ceQuiVousAttend" class="navBlock__list__link">Ce qui vous attend</a></li>
+								<li class="navBlock__list btnNav"><a href="#graphismeDesign" class="navBlock__list__link">Un peu de graphisme?</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="navContainer__socials">
+						<div class="navContainer__socials">
+							<ul class="navContainer__socials__list">
+								<li class="navContainer__socials__list__menuitem listNone"><a href="#" title="facebbok" id="facebookFollow"><i class="fa-brands fa-square-facebook"></i>Suivez nous sur Facebook</a></li>
+								<li class="navContainer__socials__list__menuitem listNone"><a href="#" title="Instagram" id="InstagramFollow"><i class="fa-brands fa-square-instagram"></i>Suivez nous sur Instagram</a></li>
+								<li class="navContainer__socials__list__menuitem listNone"><a href="#" title="linkedin" id="linkedinFollow"><i class="fa-brands fa-linkedin"></i>Suivez nous sur LinkedIn</a></li>
+							</ul>
+							
+						</div>
+					</div>	
+				</ul>
+		</nav>
+	</header>
+		<!-- <div class="cssSetter"> -->
+			<!-- <button type="submit">Haut contraste</button> -->
+		<!-- </div> -->	
+		<main>	
+
+			<section id="landingPage" class="section active landingPage">
+				<div class="landingPage__landingBlocks">
+					<h2 class="landingPage__landingBlocks__title">Jerome GEOFFROY</h2>
+					<h3 class="landingPage__landingBlocks__subTitle">Acteur du Web depuis 2009</h3>
+					<div class="landingPage__landingBlocks__img">
+						<div class="landingPage__landingBlocks__photo">
+							<img src="assets/img/pastille-photo-jeromeGeoffroy.png" alt="Logo Jérome GEOFFROY Développeur Web"  class="landingBlock__img__photo">
+						</div>
+					</div>
+					<div class="landingPage__logoBlocks">
+						<div class="landingPage__logoBlocks__container">						
+							<div class="landingPage__logoBlocks__container__lang">
+								<h3 class="landingPage__logoBlocks__container__lang__title">HTML</h3>
+								<div class="landingPage__logoBlocks__container__lang__logo">
+									<img src="assets/img/logo-html.png" alt="Logo HTML">
+								</div>
+							</div>
+							<div class="landingPage__logoBlocks__container__lang">
+								<h3 class="landingPage__logoBlocks__container__lang__title">CSS</h3>
+								<div class="landingPage__logoBlocks__container__lang__logo">
+									<img src="assets/img/logo-css.png" alt="Logo CSS">
+								</div>
+							</div>
+							<div class="landingPage__logoBlocks__container__lang">
+								<h3 class="landingPage__logoBlocks__container__lang__title">JS</h3>
+								<div class="landingPage__logoBlocks__container__lang__logo">
+									<img src="assets/img/logo-javascript.png" alt="Logo JS - JavaScript">
+								</div>
+							</div>
+							<div class="landingPage__logoBlocks__container__lang">
+								<h3 class="landingPage__logoBlocks__container__lang__title">PHP</h3>
+								<div class="landingPage__logoBlocks__container__lang__logo">
+									<img src="assets/img/logo-php.png" alt="Logo PHP">
+								</div>
+							</div>
+							<div class="landingPage__logoBlocks__container__lang">
+								<h3 class="landingPage__logoBlocks__container__lang__title">SASS</h3>
+								<div class="landingPage__logoBlocks__container__lang__logo">
+									<img src="assets/img/logo-sass.png" alt="Logo SASS">
+								</div>
+							</div>
+
+						</div>
+						<div class="landingPage__logoDesc" id="logoDescription">
+							<p class="landingPage__logoDesc__content"></p>
+						</div>
+					</div>
+					<blockquote>Et bien d’autres compétences au service de vos projets ...</blockquote>
+				</div>
+			</section>
+			
+			<section id="parcoursAtypique" class="section">
+				<div class="global">
+					<h3>parcours atypique d’un passionné de création ...</h3>
+					<div class="global__timeline">
+						
+						<div class="timeline">
+							<div class="timeline__bar"></div>
+							<div class="timeline__container timeBlock left">
+								<div class="timeBlock__content">
+									<h2 class="timeBlock__content__dates">1999 / 2003</h2>
+									<p class="timeBlock__content__desc">Avec l’émergeance du web et des nouvelles technologies, mon premier site web</p>
+								</div>
+							</div>
+							<div class="timeline__container timeBlock right">
+								<div class="timeBlock__content">
+									<h2 class="timeBlock__content__dates">2003 / 2007</h2>
+									<p class="timeBlock__content__desc">Hobbie Passion autodidacte :
+										Création de sites pour des artisans et petits entrepreneurs Périgourdin - HTML + CMS Wordpress</p>
+								</div>
+							</div>
+							<div class="timeline__container timeBlock left">
+								<div class="timeBlock__content">
+									<h2 class="timeBlock__content__dates">2008</h2>
+									<p class="timeBlock__content__desc">Webmaster pour la SARL Motortech</p>
+									<ul>
+										<li><p>Développement d’un site vitrine pour un négoce de véhicules d’occasion sur base Wordpress</p></li>
+										<li><p>Site HTML pour la promotion d’un kit de dépollution et d’économie de carburant pour rouler à l’eau</p></li>
+									</ul>
+								</div>
+							</div>
+							<div class="timeline__container timeBlock right">
+								<div class="timeBlock__content">
+									<h2 class="timeBlock__content__dates">2009 / 2019</h2>
+									<p class="timeBlock__content__desc">Installation en Freelance : Création de nombreux sites sur base de CMS Wordpress et Prestashop</p>
+								</div>
+							</div>
+							<div class="timeline__container timeBlock left">
+									<div class="timeBlock__content">
+										<h2 class="timeBlock__content__dates">2020</h2>
+										<p class="timeBlock__content__desc">Approfondissement de compétences : Développement Web et Codage HTML, CSS, SASS</p>
+									</div>
+							</div>
+							<div class="timeline__container timeBlock right">
+								<div class="timeBlock__content">
+									<h2 class="timeBlock__content__dates">2021 / 2022</h2>
+									<p class="timeBlock__content__desc">Acquisition des compétences complémentaires : JavaScript, React, PHP, Symphony</p>
+								</div>
+							</div>
+	
+						</div>
+						<div class="timeline__container">
+							<h4>A votre service pour le développement personnalisé de vos projets Web</h4>
+						</div>
+					</div>	
+				</div>
+			</section>		
+			
+			<section id="portfolio" class="section">
+				<div class="portfolio">
+					<h2>Portfolio de formation</h2>
+					<h4>Ci-dessous quelques exemples de maquettes codées en formation</h4>
+					<p>(basées sur des modèles réels)</p>
+					<div class="portfolio__folioContainer">
+						<div class="portfolio__folioContainer__imgBoxes">
+							<div class="box">
+								<img class="box__img" src="assets/img/portfolio-maquette-gaming_campus-500.jpg" alt="Codage Html CSS d'un maquette - site Gaming Campus">
+								<p class="box__desc">description du projet</p>
+							</div>
+							<div class="box">
+								<img class="box__img" src="assets/img/portfolio-maquette-the_resto-500.jpg" alt="Codage Html CSS d'un maquette - site The Resto">
+								<p class="box__desc">description du projet</p>
+							</div>
+							<div class="box">
+								<img class="box__img" src="assets/img/portfolio-maquette-tinker_starter-500.jpg" alt="Codage Html CSS d'un maquette - site TinkerStarter">
+								<p class="box__desc">description du projet</p>
+							</div>
+							<div class="box">
+								<img class="box__img" src="assets/img/portfolio-maquette-peps_coaching-500.jpg" alt="Codage Html CSS d'un maquette - site Peps Coaching">
+								<p class="box__desc">description du projet</p>
+							</div>
+							<div class="box">
+								<img class="box__img" src="assets/img/portfolio-maquette-the_underground-500.jpg" alt="Codage Html CSS d'un maquette - site The Underground">
+								<p class="box__desc">description du projet</p>
+							</div>
+							<div class="box">
+								<img class="box__img" src="assets/img/portfolio-maquette-neo_tech-500.jpg" alt="Codage Html CSS d'un maquette - site NeoTech">
+								<p class="box__desc">description du projet</p>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+			</section>
+
+			<section id="ceQuiVousAttend" class="section tabBlock">
+				<div class="tabBlock__b">
+					<div class="tabBlock__b__sb">
+						<article class="article">
+							<div class="article__topBlock">
+								<div class="article__topBlock__title">
+									<h3>Etape 1 : Wireframe</h3>
+									<h4>Une vu schématique simplifiée de l'aperçu de votre projet Web</h4>
+									<hr>
+									<div id="wireframeBlock">
+										<ul class="tabs" id="wireframeMenu">
+											<li class="active"><a href="#wireframehome" title="sujet" id="menu-link-home">De quoi parle t'on?</a></li>
+											<li class=""><a href="#wireframementions" title="attention" id="menu-link-mentions">Importance</a></li>
+											<li class=""><a href="#wireframeabout" title="résumé" id="menu-link-apropos">En résumé</a></li>
+										</ul>
+										<div class="tabs-content" id="wireframeTexts">
+											<div class="tab-content active" id="wireframehome"><p>Ici, pas d'images, pas de visuel flamboyant, pas d'esthétisme. On ne parle que structure afin de mettre en place les élements visuels de la page. Quels blocks? quels contenus, quels formats, quelles dimensions, où placer les éléments comment les disposer les un par rapports aux autres, quelles formes, etc.</p><p>Votre site web "En gros". Vous avec un premier aperçu... un "croquis".</p></div>
+											<div class="tab-content" id="wireframementions"><p>C'est une étape essentielle. Souvent ignorée à tors, car elle permet de structurer à l'avance le fonctionnement de votre site. C'est ici que l'on définit ce que l'on appelle l'UX-DESIGN, c'est à dire, le design relatif à l'expérience utilisateur : comment votre site sera utilisé? où seront situés les boutons/liens/fonctionnalités intéressants, etc. La difficulté première et de parvenir à conceptualiser le future contenu du site. Pas facile de se faire une idée qu rendu quand on représente une image ou une photo par un rectangle barré d'une croix</p><p>Et pourtant, il est indispensable de bien préparer cette étape qui sera déterminante pour le future codage du site, et pour s'assurer de rien oublier</p><p>Notez cependant, qu'il y a souvent des différences entre les étapes du Wireframe et le rendu final. Parce que les idées évoluent, parce que l'apparition des visuels et des couleurs fait émerger de nouvelles idées.</p></div>
+											<div class="tab-content" id="wireframeabout"><p>En résumé, c'est l'avant projet, l'étape qui va permettre de mettre en place les éléments du site.En résumé, on peut dire que l'étape du Wireframe est la base essentielle à penser, puisqu'elle va structurer l'interaction entre votre interface web et vos utilisateurs/clients. Un site esthétique mais malpratique peut faire fuir les clients. Cette étape, au visuel simpliste permet de mettre en évidence les points clés des interactions avec les pages et fonctionnalités de votre site</p></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="tabBlock__b__sb">
+						<article class="article">
+							<div class="article__topBlock">
+								<div class="article__topBlock__title">
+									<h3>Etape 2 : Charte Graphique</h3>
+									<h4>On commence à préciser les choses...</h4>
+									<hr>
+									<div id="charteGraphiqueBlock">
+										<ul class="tabs" id="charteGraphiqueMenu">
+											<li class="active"><a href="#charteGraphiquehome" title="sujet">De quoi parle t'on?</a></li>
+											<li class=""><a href="#charteGraphiquementions" title="attention">Importance</a></li>
+											<li class=""><a href="#charteGraphiqueabout" title="résumé">En résumé</a></li>
+										</ul>
+										<div class="tabs-content" id="charteGraphiqueTexts">
+											<div class="tab-content active" id="charteGraphiquehome"><p>La charte graphique est un ensemble d'élément qui vont définir tous les aspects visuels du site : Couleurs, arrière plan, logos, polices de caractère, taille, etc. Certaines entreprises peuvent déjà avoir une charte graphique plus ou moins avancée</p></div>
+											<div class="tab-content" id="charteGraphiquementions"><p>Cette étape est capitale et incontournable : Capitale, car elle définit LE cadre précis, l'ensemble des règles visuelles dans lesquels le site sera développé. Il sera particulièrement important de la respecter afin que le site réponde, non seulement aux exigences que le site devra respecter par rapport à l'image de l'entreprise, mais aussi, afin que les éléments et ressources visuelles à mobiliser correspondent à ce qui est attendu. Incontournable, parce que parce sans cette étape, le site prendra du retard. Plus la charte graphique sera précise, plus travail sera facilité, plus il ira vite et le temps gagné est du budget épargné</p></div>
+											<div class="tab-content" id="charteGraphiqueabout"><p>En résumé : la Charte Graphique est essentielle à la définition visuelle de votre site et fournira toutes les bases à respecter visuellement pour l'aspect esthétique du site.</p></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="tabBlock__b__sb">
+						<article class="article">
+							<div class="article__topBlock">
+								<div class="article__topBlock__title">
+									<h3>Etape 3 : MoodBord et Benchmark</h3>
+									<h4>L'ambiance se précise</h4>
+									<hr>
+									<div id="moodBenchBlock">
+										<ul class="tabs" id="moodBenchMenu">
+											<li class="active"><a href="#moodBenchhome" title="sujet">De quoi parle t'on?</a></li>
+											<li class=""><a href="#moodBenchmentions" title="attention">Importance</a></li>
+											<li class=""><a href="#moodBenchabout" title="résumé">En résumé</a></li>
+										</ul>
+										<div class="tabs-content" id="moodBenchTexts">
+											<div class="tab-content active" id="moodBenchhome"><p>Le Moodboard, comme le défini sa traduction, et un "tableau" d'inspiration destiné à donner un aperçu de l'ambiance du site par le biais d'images reflétant des notions abstraites relatives à l'ambiance, aux couleurs, aux formes du site. Une liaison avec l'activité de l'entreprise n'est pas du tout pertinente à cette étape, il est vraiment question de mettre en place une atmosphère. Le benchmark, est un ensemble de visuels permettant de présenter les sources d'inspiration. Si la copie est interdite, il peut s'avérer utile de s'inspirer de solutions déjà réalisée afin de se faire une meilleure idée de ce qui préfigurera du résultat final.</p></div>
+											<div class="tab-content" id="moodBenchmentions"><p>Les ponts important de cette étape relèvent de l'impression que vous souhaitez que votre site inspire aux visiteurs. C'est l'image ressentie aux travers des émotions véhiculées par les formes, les couleurs qui pourra donner ou non, à vos visiteurs, l'envie de rester et d'aller plus loin dans votre site</p></div>
+											<div class="tab-content" id="moodBenchabout"><p></p></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="tabBlock__b__sb">
+						<article class="article">
+							<div class="article__topBlock">
+								<div class="article__topBlock__title">
+									<h3>Étapes finales</h3>
+									<h4>Codage et optimisation</h4>
+									<hr>
+									<div id="finalStepBlock">
+										<ul class="tabs" id="finalStepMenu">
+											<li class="active" ><a href="#finalStephome" title="sujet">De quoi parle t'on?</a></li>
+											<li class=""><a href="#finalStepmentions" title="attention">Importance</a></li>
+											<li class=""><a href="#finalStepabout" title="résumé">En résumé</a></li>
+										</ul>
+										<div class="tabs-content" id="finalStepText">
+											<div class="tab-content active" id="finalStephome"><p>La phase de codage est l'ultime étape. Votre site prend vie petit à petit. La mise en place de les structure, la mise en place de la base de donnée, les liaisons entre tous les éléments de la partie frontOffice (partie visiteur) et du backOffice (interface de d'administration du site), ainsi que tout ce qui fera de votre site, l'outil de travail que vous attendez</p></div>
+											<div class="tab-content" id="finalStepmentions"><p>Je pense qu'il n'est nul besoin de détailler l'importance de cette partie. Il sera important de faire régulièrement des points afin de s'assurer que élément mis en place réponde bien à chacune de vos attentes et de vos besoins. La validation 'step by step' est le meilleur moyen de ne pas avoir à revenir sur d'importantes partie du projet au cas où, au dernier moment, le besoin d'un élément omis ou écarté lors de la préparation, se fera sentir</p></div>
+											<div class="tab-content" id="finalStepabout"><p>La livraison définitive de votre site ne pourra être validée qu'à partir du moment où chaque fonctionnalité du site aura été testée par tous les intervenants qui auront besoin de manipuler le site, ses données ou d'en modifier ou rajouter le contenu.</p></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section id="contactForm">
+				<div class="formContainer">
+	
+					<form action="" method="post" class="formContainer__form">
+						<div class="formContainer__form__inputGroupContainer">
+							<h2 class="formContainer__form__inputGroupContainer__title">Formulaire de contact</h2>
+							<div class="inputGroupBlock">
+								<h4>Vous :</h4>
+								<div class="inputGroupBlock__inputGroup">
+									<label for="lastName">Nom</label>
+									<input type="text" name="lastName" id="lastName" placeholder="DUPONT, DUPUIS...">
+								</div>
+								<div class="inputGroupBlock__inputGroup">
+									<label for="firstName">Prénom</label>
+									<input type="text" name="firstName" id="firstName" placeholder="Nestor, Herni, Joseph...">
+								</div>
+							</div>
+							<div class="inputGroupBlock">
+								<h4>Pour vous contacter/répondre :</h4>
+								<div class="inputGroupBlock__inputGroup">
+									<label for="userMail">Votre email</label>
+									<input type="email" name="userMail" id="userMail" placeholder="email@fai.com">
+								</div>
+								<div class="inputGroupBlock__inputGroup">
+									<label for="userTel">Votre téléphone</label>
+									<input type="tel" name="userTel" id="userTel" placeholder="05-04-03-02-01, 07-06-05-03-02">
+								</div>
+							</div>
+							<div class="inputGroupBlock">
+								<h4>Pourquoi me contactez-vous :</h4>
+								<div class="inputGroupBlock__inputGroup">
+									<label for="msgObject">Objet de message</label>
+									<input type="text" name="msgObject" id="msgObject" placeholder="Demande d'informations, Demande devis">
+								</div>
+								<div class="inputGroupBlock__inputGroup">
+									<label for="msgContent">Message</label>
+									<input type="textarea" name="msgContent" id="msgContent" placeholder="Je vous contacte pour....mon projet... souhaiterais savoir ...">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+	
+			</section>
+			<section id="graphismeDesign" class="section">
+				<h3 class="graphsime">Un expérience de graphiste</h3>
+				<h5>Et pour compléter toutes ces compétences web et améliorer la qualité visuelle de vos projets web, créer ou booster l’identité visuelle de votre structure, profitez également de mes compétences de Graphiste</h5>
+				<div class="skills">
+					<h5>Logos</h5>
+					<h5>cartes de visite, fidélité</h5>
+					<h5>flyers et prospectus</h5>
+					<h5>dépliants multiformats</h5>
+					<h5>brochures, manuels et notices</h5>
+					<h5>vêtements personnalisés siglés</h5>
+					<h5>objets publicitaires</h5>
+					<h6>Depuis 1999, apprentissage autodidacte avec l’appuis d’autres professionnels : Graphistes confirmés et imprimeurs.</h6>
+					<a href="https://ansoluteDesign.fr" target="_blank" title="Création de visuels et maquettes à imprimer - identité visuelle de l'entreprise">Découvrez mes créations sur mon site dédié</a>
+				</div>
+			</section>
+		</main>
+	<footer>
+	</footer>
+	<!--<script src="assets/fontawesome/js/all.js"></script> --><!--Fichier développé pour éventuelles modifications à minifier pour utilisation en ligne -->
+	<script src="assets/fontawesome/js/all.min.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/introAnimation.js"></script>
+	<script src="assets/js/moduleMenuJs.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

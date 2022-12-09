@@ -1,0 +1,201 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+
+ /* ================= Animation de l'introduction ================= */
+ // animation ouverture porte gauche en intro
+ @keyframes openDoorsLeft{
+    0%{
+        background-color: $doorFixed;
+        transform: translateX(0%);
+    }
+    5%{
+        border: 1px solid #ccc;
+        background-color: $doorFixed;
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+        transform: translateX(0%);
+    }
+    19%{
+        background-color: $doorFixed;
+        transform: translateX(0%);
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+        border: 1px solid #ccc;
+    }
+    20%{
+        background-color: $doorMove;
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+        transform: translateX(0%);
+        border: 1px solid #ccc;
+    }
+    100%{
+        background-color: $doorMove;
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+        transform: translateX(-101%);
+        border: 1px solid #ccc;
+    }
+ }
+
+ // animation ouverture porte droite en intro
+ @keyframes openDoorsRight{
+    0%{
+        background-color: $doorFixed;
+        transform: translateX(0%);
+    }
+    5%{
+        border: 1px solid #ccc;
+        background-color: $doorFixed;
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+        transform: translateX(0%);
+    }
+    19%{
+        background-color: $doorFixed;
+        transform: translateX(0%);
+        border: 1px solid #ccc;
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+    }
+    20%{
+        background-color: $doorMove;
+        transform: translateX(0%);
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+        border: 1px solid #ccc;
+    }
+    100%{
+        background-color: $doorMove;
+        transform: translateX(101%);
+        box-shadow: inset 0 0 40px lighten($darkNavBkgd,30);
+        border: 1px solid #ccc;
+    }
+ }
+
+// animation ouverture porte droite en intro
+@keyframes autoCloseMenuStart{
+    0%{
+        transform: translateX(0%);
+    }
+    25%{
+        transform: scaleX(1.05);
+    }
+    50%{
+        transform: scaleX(1);
+    }
+    70%{
+        transform: translateX(-103%);
+    }
+    100%{
+        transform: scaleX(1);
+        transform: translateX(-103%);
+    }
+}
+
+// animation de l'illumination irrégulière du texte d'incitation au clic sur le logo
+@keyframes animateClickhere{
+    0%{
+        color:$fntDarkBckgrd;
+        transition: all 20ms ease-in;
+    }
+    3%{
+        color:saturate(lighten($fntDarkBckgrd,60),50);
+        transition: all 30ms ease-in;
+    }
+    40%{
+        color:$fntDarkBckgrd;
+        transition: all 20ms ease-in;
+    }
+    42%{
+        color:saturate(lighten($fntDarkBckgrd,60),50);
+        transition: all 20ms ease-in;
+    }
+    70%{
+        color:$fntDarkBckgrd;
+        transition: all 20ms ease-in;
+    }
+    72%{
+        color:saturate(lighten($fntDarkBckgrd,60),50);
+        transition: all 30ms ease-in;
+    }
+
+    90%{
+        color:$fntDarkBckgrd;
+        transition: all 20ms ease-in;
+    }
+    92%{
+        color:saturate(lighten($fntDarkBckgrd,60),50);
+        transition: all 30ms ease-in;
+    }
+}
+
+
+// animation de l'illumination régulière du btn burger
+@keyframes clickBurger{
+    0%{
+        color:$fntDarkBckgrd;
+        transform:scale(1);
+        transition: all 20ms ease-in;
+    }
+    3%{
+        color:saturate(lighten($fntDarkBckgrd,60),50);
+        transform:scale(1.2);
+        transition: all 30ms ease-in;
+    }
+    4%{
+        color:$fntDarkBckgrd;
+        transform:scale(1);
+        transition: all 20ms ease-in;
+    }
+    7%{
+        color:saturate(lighten($fntDarkBckgrd,60),50);
+        transform:scale(1.2);
+        transition: all 30ms ease-in;
+    }
+    100%{
+        color:$fntDarkBckgrd;
+        transform:scale(1);
+        transition: all 20ms ease-in;
+    }
+}
+ /* ===================================================== */
+ /* ================= Autres Animations ================= */
+
+// Animation de la "vibration" de la croix de fermeture du menu
+@keyframes bumpCloseBtn{
+    0%{
+        transform:scale(1);
+    }
+    2%{
+        transform:scale(1.5);
+    }
+    4%{
+        transform:scale(1);
+    }
+    6%{
+        transform:scale(1.5);
+    }
+    8%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+// Animation de la "vibration" de la croix de fermeture du menu
+@keyframes bumpBurger{
+    0%{
+        transform:scale(1);
+    }
+    5%{
+        transform:scale(1.5);
+    }
+    10%{
+        transform:scale(1);
+    }
+    20%{
+        transform:scale(1.5);
+    }
+    25%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(1);
+    }
+}

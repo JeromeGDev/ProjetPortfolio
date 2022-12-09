@@ -1,0 +1,8 @@
+{
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.useInlineCompletions": true,
+    "colorHelper.pickerForm": "default",
+    "colorHelper.resident": true,
+    "liveServer.settings.port": 8082
+}

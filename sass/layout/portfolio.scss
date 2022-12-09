@@ -1,0 +1,145 @@
+@use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
+@use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
+
+// #portfolio{
+//     display:block;
+//     background-color: #fff;
+//     width:100%;
+// }
+.portfolio{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width:100%;
+    & h2{
+        color:$lightBckgrd;
+        text-align: center;
+        margin : .5rem auto;
+        padding: .5rem 1rem;
+    }
+    & h4{
+        color:$lightBckgrd;
+        text-align: center;
+        margin : .5rem auto;
+        padding: .5rem 1rem;
+    }
+    & p{
+        text-align: center;
+        padding: .5rem 1rem;
+    }
+    &__folioContainer{
+        display: flex;
+        max-width: 1503px;
+        margin: auto;
+        &__imgBoxes{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            z-index: 0;
+            width: fit-content;
+            height: auto;
+            margin:auto;
+            border: thin solid $darkBckgrd;
+            margin: 0 auto;
+            
+            &__box{
+                max-width: 500px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &::before{
+                    content:'';
+                    position:absolute;
+                    max-width: 100%;
+                    width: 100%;
+                    max-height:100%;
+                    height:100%;
+                    background-color: #00000050;
+                    z-index: 1;
+                }
+                &:hover{
+                    cursor:pointer;
+                }
+                &:hover + &__box::before{
+                    transform: scale(0);
+                    opacity: 0;
+                    z-index: -1;
+                }
+            }        
+        }
+
+    }
+}
+.box{
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:all 200ms cubic-bezier(.49,.01,.23,1.75);
+    &::before{
+        content:'';
+        position:absolute;
+        max-width: 100%;
+        width: 100%;
+        max-height:100%;
+        height:100%;
+        top:0;
+        left:0;
+        background-color: #00000050;
+        z-index: 1;
+
+    }
+    &:hover{
+        cursor:pointer;
+        transform: scale(1.1);
+        z-index: 3;
+    }
+    &:hover ~ .box__img::before{
+        transform: scale(0);
+        opacity:0;
+        z-index: -1;
+        background-color: none;
+    }
+            &:hover + .box__desc{
+            display:inline-block;
+            z-index: 4;
+        }
+    &__img{
+        max-width: 500px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition:all 200ms ease-in-out;  
+        z-index: 0;
+
+    }
+    &__desc{
+        position:absolute;
+        top:0;
+        left:0;
+        display:none;
+        max-width: 100%;
+        padding:1rem;
+        color: $fntDarkBckgrd;
+        margin:auto
+    }
+} 
+
+@media screen and (max-width: 1503px){
+    .portfolio{
+        &__folioContainer{
+            max-width: 1002px;
+        }
+    }
+}
+@media screen and (max-width: 1002px){
+    .portfolio{
+        &__folioContainer{
+            max-width: 501px;
+        }
+    }
+}

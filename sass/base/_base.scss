@@ -3,48 +3,41 @@
 
 /* Instructions basiques d'initialisation */
 *{
-    box-sizing:border-box;
+    box-sizing: border-box;
     margin:0;
     padding:0;
-}
-body{
-    background-color:$doorFixed ;
-    font-size:16px;
 }
 
 html, body{
     height:100%;
     scroll-behavior: smooth;
-    width:100%;
 }
 body{
     background-color:#1c1c1c ;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-width: 465px;
+    font-size:16px;
+    margin:0 auto;
     max-width: 100%;
+    width:auto;
+    overflow:hidden;
 }
 main{
-    max-width: 100%;
-    display: flex;
-    margin: auto;
+    align-items: center;
+    display: flex;   
     flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
+    gap:1rem;
     justify-content: center;
-    align-items: center;
-    align-content: space-between;
+    margin: auto;
+    max-width: 100%;
+    width:100%;
+    z-index: 0;
 }
 
 section{
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    width: 100%;
     margin: 0 auto 1rem auto;
-    z-index: 0;
     transition : all 200ms ease-in-out;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    width: 100%;
+    z-index: 0;
 }

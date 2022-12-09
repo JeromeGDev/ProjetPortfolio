@@ -18,17 +18,13 @@
         color: $darkBckgrd;
     }
 }
-
 /* Boutons action */
 
 .actionsBtns{
     @include flexBtn;
     width: 100%;
-    font-family: $fonta;
     aspect-ratio: 900/90;
     background-color: $regularBckgrd;
-    color: $fntDarkerBckgrd;
-    border-radius: 6px;
     margin:auto;
     max-height: 10vh;
     padding: .4rem .2rem;
@@ -38,22 +34,13 @@
         border: solid 2px $fntDarkerBckgrd;
         cursor: pointer;
     }
-}
-
-.details{
-    @include flexBtn;
-    width: 45%;
-    font-family: $fonta;
-    aspect-ratio: 900/90;
-    background-color: $darkBckgrd;
-    color: $lightBckgrd;
-    border-radius: 6px;
-    margin:auto;
-    &:hover{
-        background-color: $lightBckgrd;
-        color: $darkBckgrd;
+    & a{
+        font-family: $fonta;
+        color: $fntDarkerBckgrd;
     }
 }
+
+
 
 /* ============================= Bouton Burger =============================  */
 //Boutons Burger
@@ -217,15 +204,15 @@
 
 /*SCROLL BAR*/
 ::-webkit-scrollbar{
-    width: 1rem; /*largeur de la scrollbar verticale*/
+    width: .5rem; /*largeur de la scrollbar verticale*/
     height: 1%; /*hauteur de la scrollbar horizontale*/
-  }
-  ::-webkit-scrollbar-track {
-   background: $darkerBckgrd; /*couleur du fond de la scrollbar*/
-    border: 2vw solid $lighterBckgrd;  /*bordure*/
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: $lighterBckgrd; /*couleur de l'ascenseur*/;
-    border: 1vw solid $darkBckgrd ; /*bordure de l'ascenseur*/
-  }
+}
+::-webkit-scrollbar-track {
+    background: $darkerBckgrd; /*couleur du fond de la scrollbar*/
+    border: 1vw solid $lighterBckgrd;  /*bordure*/
+}
+::-webkit-scrollbar-thumb {
+    background-color: $regularBckgrd; /*couleur de l'ascenseur*/;
+    border: .5vw solid $darkerBckgrd ; /*bordure de l'ascenseur*/
+}
   /*FIN SCROLLBAR*/

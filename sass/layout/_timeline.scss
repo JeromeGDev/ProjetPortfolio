@@ -11,6 +11,8 @@
     background-color:$lighterBckgrd;
     margin: 1rem auto;
     position: relative;
+    padding-bottom:2rem;
+
     &__bar{
         z-index: 1;
         position:absolute;
@@ -21,11 +23,20 @@
         transform:translateX(-50%);
         background-color: $darkBckgrd;
     }
+    &__container{
+        padding-bottom : 2rem;
+        & h4{
+            color:$lighterBckgrd;
+            margin:auto;
+            max-width: 70%;
+            text-align: center;
+        }
+    }
 }
 .timeBlock{
     z-index: 0;
     display: flex;
-    padding:1rem;
+    padding: 3rem 1rem 1rem 1rem;
     gap:1rem;
     max-width: 50%;
     &__content{

@@ -144,10 +144,14 @@
 
 //Section tabs - ceQuiVousAttends
 .tabBlock{
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
     position:relative;
     width:100%;
     //max-height: max-content;
     min-height: max-content;
+    padding-bottom:2rem;
     &__b{
         display: flex;
         flex-wrap: wrap;
@@ -267,5 +271,4 @@
         }
     }
 }
-
 

@@ -145,7 +145,7 @@ $fnth2DarkerBckgrd : saturate($fntDarkBckgrd,90);
 
 $btnWidth : 25rem;
 $btnHeight: 150px;
-$aspectRatio : 250/80;// ATTENTION : valeur entre 0 & 1
+$aspectRatio : math.div(250, 80);// ATTENTION : valeur entre 0 & 1
 /* ============================= Bouton Burger =============================  */
 $burgerSize : 2rem;
 $scaleHover : 1.1;

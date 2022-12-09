@@ -8485,46 +8485,40 @@ readers do not read off random characters that represent icons */
   padding: 0;
 }
 
-body {
-  background-color: #11100a;
-  font-size: 16px;
-}
-
 html, body {
   height: 100%;
-  max-width: 100vw;
   scroll-behavior: smooth;
-  width: 100%;
 }
 
 body {
   background-color: #1c1c1c;
-  display: flex;
-  flex-direction: column;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: auto;
   overflow: hidden;
 }
 
 main {
-  max-width: 100%;
+  align-items: center;
   display: flex;
-  margin: auto;
   flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
+  gap: 1rem;
   justify-content: center;
-  align-items: center;
-  align-content: space-between;
+  margin: auto;
+  max-width: 100%;
+  width: 100%;
+  z-index: 0;
 }
 
 section {
   display: flex;
-  height: fit-content;
-  padding: 5% 0 0 0;
+  flex-direction: column;
   max-width: 100%;
-  width: 100%;
   margin: 0 auto 1rem auto;
-  z-index: 0;
   transition: all 200ms ease-in-out;
+  width: 100%;
+  z-index: 0;
 }
 
 /* Font : forgotten futurist -> Police graphique pour titre principal */
@@ -8858,11 +8852,8 @@ li {
   width: 25rem;
   aspect-ratio: 2.8;
   width: 100%;
-  font-family: "ubuntu_condensedregular", sans-serif;
   aspect-ratio: 900/90;
   background-color: #434022;
-  color: #BBB476;
-  border-radius: 6px;
   margin: auto;
   max-height: 10vh;
   padding: 0.4rem 0.2rem;
@@ -8873,24 +8864,9 @@ li {
   border: solid 2px #BBB476;
   cursor: pointer;
 }
-
-.details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25rem;
-  aspect-ratio: 2.8;
-  width: 45%;
+.actionsBtns a {
   font-family: "ubuntu_condensedregular", sans-serif;
-  aspect-ratio: 900/90;
-  background-color: black;
-  color: #888143;
-  border-radius: 6px;
-  margin: auto;
-}
-.details:hover {
-  background-color: #888143;
-  color: black;
+  color: #BBB476;
 }
 
 /* ============================= Bouton Burger =============================  */
@@ -9051,18 +9027,18 @@ li {
 
 /*SCROLL BAR*/
 ::-webkit-scrollbar {
-  width: 1rem; /*largeur de la scrollbar verticale*/
+  width: 0.5rem; /*largeur de la scrollbar verticale*/
   height: 1%; /*hauteur de la scrollbar horizontale*/
 }
 
 ::-webkit-scrollbar-track {
   background: black; /*couleur du fond de la scrollbar*/
-  border: 2vw solid #BBB476; /*bordure*/
+  border: 1vw solid #BBB476; /*bordure*/
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #BBB476; /*couleur de l'ascenseur*/
-  border: 1vw solid black; /*bordure de l'ascenseur*/
+  background-color: #434022; /*couleur de l'ascenseur*/
+  border: 0.5vw solid black; /*bordure de l'ascenseur*/
 }
 
 /*FIN SCROLLBAR*/
@@ -9406,9 +9382,13 @@ li {
 }
 
 .tabBlock {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   position: relative;
   width: 100%;
   min-height: max-content;
+  padding-bottom: 2rem;
 }
 .tabBlock__b {
   display: flex;
@@ -9562,6 +9542,7 @@ li {
   background-color: #BBB476;
   margin: 1rem auto;
   position: relative;
+  padding-bottom: 2rem;
 }
 .timeline__bar {
   z-index: 1;
@@ -9573,11 +9554,20 @@ li {
   transform: translateX(-50%);
   background-color: black;
 }
+.timeline__container {
+  padding-bottom: 2rem;
+}
+.timeline__container h4 {
+  color: #BBB476;
+  margin: auto;
+  max-width: 70%;
+  text-align: center;
+}
 
 .timeBlock {
   z-index: 0;
   display: flex;
-  padding: 1rem;
+  padding: 3rem 1rem 1rem 1rem;
   gap: 1rem;
   max-width: 50%;
 }
@@ -9635,6 +9625,7 @@ li {
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+  padding-bottom: 2rem;
 }
 .portfolio h2 {
   color: #888143;
@@ -9764,6 +9755,7 @@ li {
   height: 100%;
   left: 0;
   margin: 0;
+  min-width: 100%;
   overflow: hidden;
   padding: 0;
   position: absolute;
@@ -9784,7 +9776,7 @@ li {
 .door__blocks__firstBlock {
   display: block;
   background-color: #11100a;
-  height: 100%;
+  height: 100vh;
   left: 0;
   position: absolute;
   top: 0;
@@ -9794,7 +9786,7 @@ li {
 .door__blocks__secondBlock {
   background-color: #11100a;
   display: block;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   right: 0;
   top: 0;

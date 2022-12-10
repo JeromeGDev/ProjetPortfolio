@@ -8887,19 +8887,19 @@ li {
   cursor: pointer;
   transform: scale(1.1);
 }
-.btnBurger:hover > .btnBurger__Top {
+.btnBurger:hover > .btnBurger__top {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-  transform: rotate(-45deg) translateY(0.25rem);
+  transform: rotate(45deg) translateY(0.25rem);
   background-color: #888143;
 }
-.btnBurger:hover > .btnBurger__Middle {
+.btnBurger:hover > .btnBurger__middle {
   display: none;
 }
-.btnBurger:hover > .btnBurger__Bottom {
+.btnBurger:hover > .btnBurger__bottom {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-  transform: rotate(45deg) translateY(-0.25rem);
+  transform: rotate(-45deg) translateY(-0.25rem);
   background-color: #888143;
 }
 .btnBurger__top {

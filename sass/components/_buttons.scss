@@ -61,21 +61,21 @@
         cursor: pointer;
         transform:scale($scaleHover);
     }
-    &:hover > &__Top{
+    &:hover > &__top{
         // border-radius: 50px;
         border-bottom-left-radius:0 ;
         border-top-left-radius:0 ;
-        transform: rotate(-45deg) translateY(.25rem);
+        transform: rotate(45deg) translateY(.25rem);
         background-color: $fntDarkBckgrd
     }
-    &:hover > &__Middle{
+    &:hover > &__middle{
         display: none;
     }
-    &:hover > &__Bottom{
+    &:hover > &__bottom{
         // border-radius: 50px;
         border-bottom-left-radius:0 ;
         border-top-left-radius:0 ;
-        transform: rotate(45deg) translateY(-.25rem);
+        transform: rotate(-45deg) translateY(-.25rem);
         background-color: $fntDarkBckgrd;
     }
     &__top{
@@ -179,12 +179,12 @@
     background-color: $darkerBckgrd;
     width: 90%;
     margin-left:1rem;
-        color: $fntDarkerBckgrd;
-        font-family: $fonta;
-        font-weight: 300;
-        text-align: left;
-        text-decoration: none;
-        transition: all 200ms ease-in-out;
+    color: $fntDarkerBckgrd;
+    font-family: $fonta;
+    font-weight: 300;
+    text-align: left;
+    text-decoration: none;
+    transition: all 200ms ease-in-out;
     &:hover{
         border: 2px solid $lighterBckgrd;
         cursor: pointer;

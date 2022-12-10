@@ -46,6 +46,12 @@
             padding : .5rem .8rem;
             background-color: lighten($lighterBckgrd,50);
         }
+        &__dec{
+
+        }
+        &__supp{
+            display:none;
+        }
     }
 }
 .left{
@@ -84,3 +90,16 @@ content: '';
     background-color: $darkBckgrd;
 }
 
+@media screen and (min-width:992px){
+    .timeBlock{
+
+        &__content{
+
+            &__supp{
+                display:block;
+                padding-top:1rem;
+                font-style: italic;
+            }
+        }
+    }
+}

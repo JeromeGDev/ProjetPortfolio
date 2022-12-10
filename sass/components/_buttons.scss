@@ -179,25 +179,24 @@
     background-color: $darkerBckgrd;
     width: 90%;
     margin-left:1rem;
-    &:hover{
-        border: 2px solid $lighterBckgrd;
-        cursor: pointer;
-
-    }
-    &:hover > a{
-        color: lighten($lighterBckgrd, 20);
-        cursor: pointer;
-        font-family: $fontah !important;
-    }
-    & a{
         color: $fntDarkerBckgrd;
-        display:flex;
-        @include flexVtopHleft;
         font-family: $fonta;
         font-weight: 300;
         text-align: left;
         text-decoration: none;
         transition: all 200ms ease-in-out;
+    &:hover{
+        border: 2px solid $lighterBckgrd;
+        cursor: pointer;
+        color: lighten($lighterBckgrd, 20);
+        cursor: pointer;
+        font-family: $fontah !important;
+    }
+    &:hover > a{
+
+    }
+    & a{
+
 
     }
 }

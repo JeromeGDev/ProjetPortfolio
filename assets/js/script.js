@@ -30,3 +30,5 @@
 //     //condition?????? récupérer l'id de la section à afficher en fonction du bouton cliqué
 //     /*QuestceQuiVaLa?*/.classList.toogle("active")
 // }
+
+

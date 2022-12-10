@@ -3,8 +3,8 @@
         if (animations === undefined) {                                        // Le système d'animation se charge dés le début de la page, donc, en ajoutant un paramètre animation à la fonction et en disant : si l'animation est undefined alors:
             animations = true                                                  // L'animation doit être considérée comme déjà ok
             }
-        // Déclaration des letiables à utiliser
-        let div = a.parentNode.parentNode.parentNode                            // la fonction event = on crée la letiable div qui sélectionne l'élément le plus haut de la div en cours (relative aux onglets)
+        // Déclaration des li à utiliser
+        let div = a.parentNode.parentNode.parentNode                            // on crée la li div qui sélectionne l'élément le plus haut de la div en cours (relative aux onglets)
         let li = a.parentNode                                                   // Nous allons utiliser du code plusieurs fois, donc, on crée la letiable "li" qui sélectionne le li parent
 
         let activeTab = div.querySelector(".tab-content.active")                // On crée un letiable activeTab qui sélection l'onglet avec les classes qui l'identifie comme étant "onglet de contenu" et "actif"
@@ -12,9 +12,10 @@
 
         // Fonctions du code
         if (li.classList.contains("active")){                                   // SI l'élément parent (parentNode) de l'élément en cours (this), qui est "li", a (contains) la classe active ("active")
-        return false}                                                           // retourne FAUX (pour interrompre l'action : le reste de la fonction ne sera pas exécuté ( 4 et 5))
-        // ON RETIRE la class active de l'onglet actif
-        div.querySelector(".tabs .active").classList.remove("active")           // depuis la div choisie, on sélectionne le premier élément "tabs" qui a la classe "active" et on la lui supprime
+            return false;
+        }                                                                       // retourne FAUX (pour interrompre l'action : le reste de la fonction ne sera pas exécuté ( 4 et 5))
+        
+        div.querySelector(".tabs .active").classList.remove("active")           // ON RETIRE la class active de l'onglet actif           // depuis la div choisie, on sélectionne le premier élément "tabs" qui a la classe "active" et on la lui supprime
 
         // On ajoute la classe active sur le contenu actif
         li.classList.add("active")                                              // DEPUIS l'ELEMENT ACTIF (=this de la letiable "li"on sélectionne l'élément parent de type "li", et on lui ajoute la classe "active"
@@ -40,7 +41,7 @@
     }
         let tabs = document.querySelectorAll(".tabs a")                             // On crée la letiable "tabs" qui est la sélection du lien "a" de la class "tabs" point (1)
     for (let i = 0 ; i < tabs.length ; i++){                                        // On parcoure la liste des éléments tabs
-        tabs[i].addEventListener("click", function(event){                  // On place un écouteur sur l'élément tabs ayant l'indice actif [i], on surveille les click qui déclenche la fonction(event)
+        tabs[i].addEventListener("click", ()=>{                  // On place un écouteur sur l'élément tabs ayant l'indice actif [i], on surveille les click qui déclenche la fonction(event)
             afficherOnglet(this)                                                    // on appelle la fonction afficherOnglet, et "this" refais son apparition, car la fonction est appliquée à l'élément en cours
         })
     }

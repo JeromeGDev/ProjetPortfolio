@@ -63,9 +63,9 @@
     }
     &:hover > &__top{
         // border-radius: 50px;
-        border-bottom-left-radius:0 ;
-        border-top-left-radius:0 ;
-        transform: rotate(45deg) translateY(.25rem);
+        border-bottom-right-radius:0 ;
+        border-top-right-radius:0 ;
+        transform: rotate(45deg) translateY(.35rem);
         background-color: $fntDarkBckgrd
     }
     &:hover > &__middle{
@@ -73,9 +73,9 @@
     }
     &:hover > &__bottom{
         // border-radius: 50px;
-        border-bottom-left-radius:0 ;
-        border-top-left-radius:0 ;
-        transform: rotate(-45deg) translateY(-.25rem);
+        border-bottom-right-radius:0 ;
+        border-top-right-radius:0 ;
+        transform: rotate(-45deg) translateY(-.35rem);
         background-color: $fntDarkBckgrd;
     }
     &__top{

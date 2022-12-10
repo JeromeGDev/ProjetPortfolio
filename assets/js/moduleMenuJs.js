@@ -1,6 +1,6 @@
 ( function () {    // Fonction qui s'auto-appelle pour éviter collision et sécurité
     // Définition de la valeur du statut d'execution de la fonction de débugage de l'animation : 
-    let introDebugStatus = false;
+    let activationDebugStatus = false;
 
 /* ================================================ Variables ================================================*/
 
@@ -31,15 +31,15 @@ const btnClose = document.querySelector( ".btnClose" );                         
 
     // On appelle la fonction hashchange dés le démarrage de la page
     // fonction d'execution de la fonction de débugage : en fonction de la valeur du statut, affiche les valeurs de débugage dans la console. Ne s'excute que si la valeur est modifiée manuellement sur "true"
-    function introDebugLanch() {
-        if ( introDebugStatus !== false ) {                                     // Si le statut de lancement de la fonction de débugage n'est pas faux,
-            introDebug();                                                       //  lance le débugage
+    function debugLanch() {
+        if ( activationDebugStatus !== false ) {                                     // Si le statut de lancement de la fonction de débugage n'est pas faux,
+            activationDebug();                                                       //  lance le débugage
         }
     }
 
 
     // fonction de débugage dans la console : en fonction de la valeur du statut,
-    function introDebug() {
+    function activationDebug() {
 
         console.log( "navContainer", navContainer );
         console.log( "btnBurger", btnBurger );
@@ -48,7 +48,7 @@ const btnClose = document.querySelector( ".btnClose" );                         
 
     /* ========== appel des fonctions ========== */
     // appel de la fonction d'execution de la fonction de débugage
-    introDebugLanch()
+    debugLanch()
 
 
 })()

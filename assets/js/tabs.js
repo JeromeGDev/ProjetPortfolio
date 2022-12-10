@@ -1,7 +1,7 @@
 ( function () { // Fonction GLOBALE qui s'auto-appelle : permet d'éviter collision avec d'autres fonction du code qui pourrait avoir le même nom et sécuriser le code en empêchant des appels hors fonction
     
     // Définition de la valeur du statut d'execution de la fonction de débugage de l'animation : 
-    let introDebugStatus = false;                                               // MODIFIER LA VALEUR SUR "TRUE" POUR DEBUGER
+    let activationDebugStatus = false;                                               // MODIFIER LA VALEUR SUR "TRUE" POUR DEBUGER
 
     let afficherOnglet = function (a, animations) { 
         if (animations === undefined) {                                        // Le système d'animation se charge dés le début de la page, donc, en ajoutant un paramètre animation à la fonction et en disant : si l'animation est undefined alors:
@@ -70,15 +70,15 @@
      
     // On appelle la fonction hashchange dés le démarrage de la page
     // fonction d'execution de la fonction de débugage : en fonction de la valeur du statut, affiche les valeurs de débugage dans la console. Ne s'excute que si la valeur est modifiée manuellement sur "true"
-    function introDebugLanch() {
-        if ( introDebugStatus !== false ) {
-            introDebug();
+    function debugLanch() {
+        if ( activationDebugStatus !== false ) {
+            activationDebug();
         }
     }
 
 
     // fonction de débugage dans la console : en fonction de la valeur du statut,
-    function introDebug() {
+    function activationDebug() {
 
         console.log( "activeTab", activeTab );
         console.log( "tabToShow", tabToShow );
@@ -87,7 +87,7 @@
 
     /* ========== appel des fonctions ========== */
     // appel de la fonction d'execution de la fonction de débugage
-    introDebugLanch()
+    debugLanch()
 
     // appel de la fonction de hashage qui permet de lancer l'utilisation des onglets
     hashchange();

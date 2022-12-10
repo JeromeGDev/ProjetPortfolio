@@ -1,6 +1,6 @@
 ( function () {    // Fonction qui s'auto-appelle pour éviter collision et sécurité
     // Définition de la valeur du statut d'execution de la fonction de débugage de l'animation : 
-    let introDebugStatus = false;                                       // MODIFIER LA VALEUR SUR "TRUE" POUR DEBUGER
+    let activationDebugStatus = false;                                       // MODIFIER LA VALEUR SUR "TRUE" POUR DEBUGER
 
     
     // Déclaration des variables utilisées dans les fonctions
@@ -77,9 +77,9 @@
 
 
     // fonction d'execution de la fonction de débugage : en fonction de la valeur du statut, affiche les valeurs de débugage dans la console. Ne s'excute que si la valeur est modifiée manuellement sur "true"
-    function introDebugLanch() {
-        if ( introDebugStatus !== false ) {
-            introDebug();
+    function debugLanch() {
+        if ( activationDebugStatus !== false ) {
+            activationDebug();
         }
 
     }
@@ -87,7 +87,7 @@
 
 
     // fonction de débugage dans la console : en fonction de la valeur du statut,
-    function introDebug() {
+    function activationDebug() {
 
         console.log( "doorsOpener", doorsOpener );
         console.log( "leftDoor", leftDoor );
@@ -103,7 +103,7 @@
 
     /* ========== appel des fonctions ========== */
     // appel de la fonction d'execution de la fonction de débugage
-    introDebugLanch()
+    debugLanch()
     
     // appel de la fonction d'execution l'animation d'introduction
     playIntro()

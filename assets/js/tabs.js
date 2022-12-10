@@ -1,4 +1,8 @@
-(function(){ // Fonction qui s'auto-appelle pour éviter collision et sécurité
+( function () { // Fonction qui s'auto-appelle pour éviter collision et sécurité
+    
+    // Définition de la valeur du statut d'execution de la fonction de débugage de l'animation : 
+    let introDebugStatus = false;                                               // MODIFIER LA VALEUR SUR "TRUE" POUR DEBUGER
+
     let afficherOnglet = function (a, animations) { 
         if (animations === undefined) {                                        // Le système d'animation se charge dés le début de la page, donc, en ajoutant un paramètre animation à la fonction et en disant : si l'animation est undefined alors:
             animations = true                                                  // L'animation doit être considérée comme déjà ok
@@ -61,5 +65,32 @@
     }
      window.addEventListener("hashchange", hashchange)                                 // 37 - On crée un écouteur sur le window pour détecter les changement de hash de manière à executer la fonction hashchange
      hashchange()                                                                       // 38 - On appelle la fonction hashchange dés le démarrage de la page
+    // fonction d'execution de la fonction de débugage : en fonction de la valeur du statut, affiche les valeurs de débugage dans la console. Ne s'excute que si la valeur est modifiée manuellement sur "true"
+    function introDebugLanch() {
+        if ( introDebugStatus !== false ) {
+            introDebug();
+        }
 
+    }
+
+
+
+    // fonction de débugage dans la console : en fonction de la valeur du statut,
+    function introDebug() {
+
+        console.log( "doorsOpener", doorsOpener );
+        console.log( "leftDoor", leftDoor );
+        console.log( "rightDoor", rightDoor );
+        console.log( "doorBlock", doorBlock );
+        console.log( "toAnimate", toAnimate );
+        console.log( "supprOverFlHid", supprOverFlHid );
+        console.log( "navContainer", navContainer );
+        console.log( "bumperBurger", bumperBurger );
+        console.log( "animationValue =", animationValue );
+
+    }
+
+    /* ========== appel des fonctions ========== */
+    // appel de la fonction d'execution de la fonction de débugage
+    introDebugLanch()
     })()

@@ -199,7 +199,7 @@
 
 						</div>
 					</div>
-					<blockquote>Et bien d’autres compétences au service de vos projets ...</blockquote>
+					<blockquote> Et bien d’autres compétences au service de vos projets ... </blockquote>
 					</div>
 				</div>
 			</section>
@@ -343,7 +343,7 @@
 											<div class="tabs-content" id="charteGraphiqueTexts">
 												<div class="tab-content active" id="charteGraphiquehome"><p>La charte graphique est un ensemble d'élément qui vont définir tous les aspects visuels du site : Couleurs, arrière plan, logos, polices de caractère, taille, etc. Certaines entreprises peuvent déjà avoir une charte graphique plus ou moins avancée</p></div>
 												<div class="tab-content" id="charteGraphiquementions"><p>Cette étape est capitale et incontournable : Capitale, car elle définit LE cadre précis, l'ensemble des règles visuelles dans lesquels le site sera développé. Il sera particulièrement important de la respecter afin que le site réponde, non seulement aux exigences que le site devra respecter par rapport à l'image de l'entreprise, mais aussi, afin que les éléments et ressources visuelles à mobiliser correspondent à ce qui est attendu. Incontournable, parce que parce sans cette étape, le site prendra du retard. Plus la charte graphique sera précise, plus travail sera facilité, plus il ira vite et le temps gagné est du budget épargné</p></div>
-												<div class="tab-content" id="charteGraphiqueabout"><p>En résumé : la Charte Graphique est essentielle à la définition visuelle de votre site et fournira toutes les bases à respecter visuellement pour l'aspect esthétique du site.</p></div>
+												<div class="tab-content" id="charteGraphiqueabout"><p>En résumé : la Charte Graphique est essentielle (probablement l'él&ment le plus indispensable) à la définition visuelle de votre site et fournira toutes les bases à respecter visuellement pour l'aspect esthétique du site. La défintion de la Charte Graphique permet au développeur de détenir tous les éléments visuels essentiels qu'il doit impérativement respecter pour satisfaire aux exigences du client concernant l'apparence du site</p></div>
 											</div>
 										</div>
 									</div>
@@ -402,26 +402,33 @@
 			<section id="contactForm" class="section">
 				<div class="formContainer">
 					<div class="formContainer__text">
-						<p><span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse illo voluptatum, ut amet libero perferendis tenetur enim fugiat porro! Consequatur veritatis, quidem illo laborum voluptatem odio quae blanditiis quo rerum?</span><span>Quis voluptatibus quod tenetur qui modi excepturi atque, aliquid soluta. Earum, laudantium repellendus? Iusto corrupti asperiores dicta sit officiis molestias autem quod sunt! Commodi rerum quisquam nostrum enim, sint inventore!</span></p>
+						<h4>N'hésitez pas à me contacter :</h4>
+						<p>Vous avez des questions sur les <strong>prestations proposées?</strong> ou encore sur les disponibilités</p>
+						<p>Vous souhaitez avoir des informations sur <strong>la faisabilité de votre projet Web</strong>?</p>
+						<p>Vous souhaitez avoir des informations sur <strong>les besoins de votre projet Web</strong>?</p>
+						<p>Vous souhaitez avoir des informations sur <strong>les éléments de contenu</strong> que vous devez préparer en vue de la réalisation de votre projet Web?</p>
+						<p>Posez vos questions, nous trouverons les réponses</p>
 					</div>
 					<form action="" method="post" class="formContainer__form">
 						<div class="formContainer__form__inputGroupContainer">
 							<h2 class="formContainer__form__inputGroupContainer__title">Formulaire de contact</h2>
+							<p class="advice"><em>les bordures rouges indiquent des données absentes ou invalides. C'est vert? donc, c'est rempli ou non obligatoire, super (remplissez les champs non obligatoire si vous le souhaitez), continuez!</em></p>
+
 							<div class="inputGroupBlock">
 								<h4>Vous :</h4>
 								<div class="inputGroupBlock__inputGroup">
-									<label for="lastName">Nom</label>
+									<label for="lastName">Nom <span class="required">*</span></label>
 									<input type="text" required name="lastName" id="lastName" placeholder="DUPONT, DUPUIS...">
 								</div>
 								<div class="inputGroupBlock__inputGroup">
-									<label for="firstName">Prénom</label>
+									<label for="firstName">Prénom <span class="required">*</span></label>
 									<input type="text" required name="firstName" id="firstName" placeholder="Nestor, Herni, Joseph...">
 								</div>
 							</div>
 							<div class="inputGroupBlock">
 								<h4>Pour vous contacter/répondre :</h4>
 								<div class="inputGroupBlock__inputGroup">
-									<label for="userMail">Votre email</label>
+									<label for="userMail">Votre email <span class="required">*</span></label>
 									<input type="email"required  name="userMail" id="userMail" placeholder="email@fai.com">
 								</div>
 								<div class="inputGroupBlock__inputGroup">
@@ -432,11 +439,11 @@
 							<div class="inputGroupBlock">
 								<h4>Pourquoi me contactez-vous :</h4>
 								<div class="inputGroupBlock__inputGroup">
-									<label for="msgObject">Objet de message</label>
-									<input type="text"required  name="msgObject" id="msgObject" placeholder="Demande d'informations, Demande devis">
+									<label for="msgObject">Objet de message <span class="required">*</span></label>
+									<input type="text"required name="msgObject" id="msgObject" placeholder="Demande d'informations, Demande devis">
 								</div>
 								<div class="inputGroupBlock__inputGroup">
-									<label for="msgContent">Message</label>
+									<label for="msgContent">Message <span class="required">*</span></label>
 									<textarea rows="5" cols="100" required name="msgContent" id="msgContent" placeholder="Je vous contacte pour....mon projet... souhaiterais savoir ..."></textarea>
 								</div>
 							</div>

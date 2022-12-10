@@ -14,18 +14,26 @@
     background-color:#fff;
     margin:auto;
     &__text{
+        display: flex;
+        flex-direction: column;
+        gap : 1rem;
         max-width: 30%;
         padding: 2rem 1rem 2rem 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
+        & h4{
+            text-align: right;
+            color: $fntLighterBckgrd;
+            width:100%;
+        }
         & p{
             text-align: right;
         }
     }
     &__form{
         display:block;
-        width:50%;
+        width:60%;
         margin:auto;
         background-color:#fff;
         &__inputGroupContainer{
@@ -55,19 +63,56 @@
         width:100%;
         & label{
             width:auto;
-            font-size: .75rem;;
+            font-size: .75rem;
+            position:relative;
         }
         & input{
             width:100%;
             &[placeholder]{
                 opacity: .5;
             }
+            &[required]::before{
+                content:'*';
+                position:absolute;
+                right: -.5rem;
+                top:0;
+                left:0;
+                width:auto;
+                height:auto;
+            }
         }
         & textarea{
-            width:100%;
+            width: 100%;
+            position: relative;
             &[placeholder]{
                 opacity: .5;
             }
         }
     }
+}
+input:invalid {
+    border: 2px dashed red;
+  }
+  
+input:valid {
+border: 1px solid green;
+}
+label{
+    position:relative;
+}
+.required{
+    display: inline-block;
+    content:'*';
+    position:absolute;
+    left: -.8rem;
+    top:0;
+    width:auto;
+    height:auto;
+    color:red;
+    font-size: .9rem;
+}
+.advice{
+    font-style: italic;
+    color: lighten($baseFontClr,50);
+    font-size: .8rem;
 }

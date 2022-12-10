@@ -9456,18 +9456,26 @@ li {
   margin: auto;
 }
 .formContainer__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   max-width: 30%;
   padding: 2rem 1rem 2rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.formContainer__text h4 {
+  text-align: right;
+  color: black;
+  width: 100%;
+}
 .formContainer__text p {
   text-align: right;
 }
 .formContainer__form {
   display: block;
-  width: 50%;
+  width: 60%;
   margin: auto;
   background-color: #fff;
 }
@@ -9500,6 +9508,7 @@ li {
 .inputGroupBlock__inputGroup label {
   width: auto;
   font-size: 0.75rem;
+  position: relative;
 }
 .inputGroupBlock__inputGroup input {
   width: 100%;
@@ -9507,11 +9516,51 @@ li {
 .inputGroupBlock__inputGroup input[placeholder] {
   opacity: 0.5;
 }
+.inputGroupBlock__inputGroup input[required]::before {
+  content: "*";
+  position: absolute;
+  right: -0.5rem;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
 .inputGroupBlock__inputGroup textarea {
   width: 100%;
+  position: relative;
 }
 .inputGroupBlock__inputGroup textarea[placeholder] {
   opacity: 0.5;
+}
+
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 1px solid green;
+}
+
+label {
+  position: relative;
+}
+
+.required {
+  display: inline-block;
+  content: "*";
+  position: absolute;
+  left: -0.8rem;
+  top: 0;
+  width: auto;
+  height: auto;
+  color: red;
+  font-size: 0.9rem;
+}
+
+.advice {
+  font-style: italic;
+  color: #dabd7c;
+  font-size: 0.8rem;
 }
 
 .tab-content {

@@ -57,3 +57,19 @@ Pas eu le temps de créer un Regex en JS pour la vérification et sécurisation 
 Le texte est écrit trop petit et demanderait à être adapté pour être plus lisible.
 
 - 6 - Petit paragraphe de "rappel" de compétences de graphiste avec un lien sensé renvoyer sur mon site consacré au design.
+
+## rapport validation W3C :
+Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed.
+
+1 - From line 340, column 4; to line 340, column 49
+<section id="ceQuiVousAttend" class="section">
+
+2 - Error: Bad value for attribute action on element form: Must be non-empty.
+From line 448, column 6; to line 448, column 63
+<form action="" method="post" class="formContainer__form">↩	
+
+# =====> Pas de corrections
+1 - Des titres de balise h doivent être rajoutée juste après les balises de sections. Pas le temps de revoir le code, mais notion prise en compte.
+
+2 - Erreur normal, nous n'avons pas encore abordé ce point dans le cadre de la formation.
+

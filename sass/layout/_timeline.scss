@@ -42,15 +42,23 @@
     &__content{
         display:flex;
         flex-direction: column;
+        width:100%;
         &__dates{
             padding : .5rem .8rem;
             background-color: lighten($lighterBckgrd,50);
+            width:100%;
         }
-        &__dec{
-
+        &__desc{
+                font-size: 1.6rem;
+                & ul{
+                    & li{
+                        font-size: 1.3rem;
+                    }
+                }
         }
         &__supp{
             display:none;
+            font-size: 1.2rem;
         }
     }
 }

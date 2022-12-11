@@ -9048,6 +9048,15 @@ li {
   cursor: pointer;
   font-family: "ubunturegular", sans-serif !important;
 }
+
+.formBtn {
+  padding: 0.8rem 1rem;
+  border: 1px solid black;
+}
+.formBtn:hover {
+  border: 4px solid green;
+}
+
 /*SCROLL BAR*/
 ::-webkit-scrollbar {
   width: 0.5rem; /*largeur de la scrollbar verticale*/
@@ -9065,6 +9074,16 @@ li {
 }
 
 /*FIN SCROLLBAR*/
+.outerLink {
+  padding: 1.2rem 2rem 1.5rem 2rem;
+  border-radius: 3px;
+  border: solid thin #888143;
+}
+.outerLink:hover {
+  background-color: black;
+  box-shadow: 0 0 15px #e4e4e4;
+}
+
 .header {
   align-items: center;
   align-content: center;
@@ -9737,13 +9756,22 @@ label {
 .timeBlock__content {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .timeBlock__content__dates {
   padding: 0.5rem 0.8rem;
   background-color: white;
+  width: 100%;
+}
+.timeBlock__content__desc {
+  font-size: 1.6rem;
+}
+.timeBlock__content__desc ul li {
+  font-size: 1.3rem;
 }
 .timeBlock__content__supp {
   display: none;
+  font-size: 1.2rem;
 }
 
 .left {

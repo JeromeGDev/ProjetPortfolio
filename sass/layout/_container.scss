@@ -230,12 +230,6 @@
 
 @media screen and (min-width: 1002px){
     .landingPage{
-        &__header{
-            &__title{
-            }
-            &__subTitle{
-            }
-        }
         &__mainContainer{
             flex-direction: row;
             //padding-bottom: 2rem;
@@ -246,37 +240,10 @@
                     width:100%;
                 }
             }
-            &__logoBlocks{
-                &__container{
-                    &__lang{
-                        &__title{
-                        }
-                        &__logo{
-                            & img{
-                            }        
-                        } 
-                        &:hover > &__title{
-                        }
-                        &:hover +  img{
-                        }
-                        &:hover > &__logo{
-                        }
-                    }        
-                }        
-            }
         }
     }
     
-    // Section parcours
-    .global{
 
-        & h3{    
-
-        }
-        &__timeline{
-
-        }
-    }
 
     //Section tabs - ceQuiVousAttends
     .article{
@@ -299,9 +266,6 @@
             &__sb{
                 min-width: 40%;
                 max-width: 50%;
-            }
-            &__sb:nth-child(2n){
-
             }
         }
     }

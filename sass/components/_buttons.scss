@@ -192,15 +192,15 @@
         cursor: pointer;
         font-family: $fontah !important;
     }
-    &:hover > a{
-
-    }
-    & a{
-
-
-    }
 }
 
+.formBtn{
+    padding: .8rem 1rem;
+    border:1px solid black;
+    &:hover{
+        border: 4px solid green;
+    }
+}
 /*SCROLL BAR*/
 ::-webkit-scrollbar{
     width: .5rem; /*largeur de la scrollbar verticale*/
@@ -215,3 +215,12 @@
     border: .5vw solid $darkerBckgrd ; /*bordure de l'ascenseur*/
 }
   /*FIN SCROLLBAR*/
+ .outerLink{
+    padding: 1.2rem 2rem 1.5rem 2rem;
+    border-radius: 3px;
+    border: solid thin $lightBckgrd;
+    &:hover{
+        background-color: $darkBckgrd;
+        box-shadow: 0 0 15px $burgerColor;
+    }
+ }

@@ -199,3 +199,34 @@
         transform:scale(1);
     }
 }
+
+// Animation de la "vibration" de la croix de fermeture du menu
+@keyframes flipBox{
+    0%{
+        transform:scaleX(1);
+    }
+    50%{
+        transform:scaleX(0);
+    }
+    100%{
+        transform:scaleX(1);
+    }
+}
+
+@keyframes flipBoxTo0{
+    from{
+        transform:scaleX(1);
+    }
+    to{
+        transform:scaleX(0);
+    }
+}
+
+@keyframes flipBoxTo1{
+    from{
+        transform:scaleX(0);
+    }
+    to{
+        transform:scaleX(1);
+    }
+}

@@ -1,144 +1,173 @@
 @use 'sass:math'; // Permet d'utiliser des fonctions intégrées SASS de calcul mathématiques dans ce fichier
 @use 'sass:color'; // Permet d'utiliser des fonctions intégrées SASS de modification des couleurs dans ce fichier
 
-// #portfolio{
-//     display:block;
-//     background-color: #fff;
-//     width:100%;
-// }
+
 .portfolio{
     background-color: #fff;
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    width:100%;
     padding-bottom: 2rem;
+    width:100%;
     & h2{
         color:$lightBckgrd;
-        text-align: center;
         margin : .5rem auto;
         padding: .5rem 1rem;
+        text-align: center;
     }
     & h4{
         color:$lightBckgrd;
-        text-align: center;
         margin : .5rem auto;
         padding: .5rem 1rem;
+        text-align: center;
     }
     & p{
-        text-align: center;
         padding: .5rem 1rem;
+        text-align: center;
     }
     &__folioContainer{
         display: flex;
-        max-width: 1503px;
         margin: auto;
+        max-width: 1503px;
         &__imgBoxes{
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            z-index: 0;
-            width: fit-content;
             height: auto;
             margin:auto;
-            border: thin solid $darkBckgrd;
-            margin: 0 auto;
-            
-            // &__box{
-            //     max-width: 500px;
-            //     position: relative;
-            //     display: flex;
-            //     justify-content: center;
-            //     align-items: center;
-
-            //     &:hover + .box::before{
-            //         display: none;
-            //     }
-            //     &::before{
-            //         content:'';
-            //         position:absolute;
-            //         max-width: 100%;
-            //         width: 100%;
-            //         max-height:100%;
-            //         height:100%;
-            //         background-color: #00000050;
-            //         z-index: 1;
-            //         &:hover{
-            //             z-index: -1;
-            //         }
-            //     }
-            //     &:hover{
-            //         cursor:pointer;
-            //     }
-
-            // }        
+            width: fit-content;
+            z-index: 0;    
         }
 
     }
 }
+
 .box{
-    max-width: 500px;
-    position: relative;
+    align-items: center;
+    border: thin solid $regularBckgrd;
     display: flex;
     justify-content: center;
-    align-items: center;
+    max-width: 500px;
+    overflow:hidden;
+    padding:1px;
+    position: relative;
     transition:all 200ms cubic-bezier(.49,.01,.23,1.75);
     &::before{
+        background-color: $regularBckgrd;
         content:'';
-        position:absolute;
-        max-width: 100%;
-        width: 100%;
-        max-height:100%;
         height:100%;
-        top:0;
         left:0;
-        background-color: #00000050;
+        max-width: 100%;
+        max-height:100%;
+        top:0;
+        opacity: .5;
+        position:absolute;
+        transition: all 250ms ease-out;
+        width: 100%;
         z-index: 1;
-        transition: all 750ms ease-out;
-    }
-    &:hover,
-    &:active,
-    &:focus{
-        cursor:pointer;
-        transform: scale(1.1);
+   }
+   // uniquement pour les larges écrans
+    // &:hover,
+    // &:active,
+    // &:focus{
+    //     cursor:pointer;
+    //     transform: scale(1.1);
+    //     z-index: 3;
+    //     animation: flipBox 500ms forwards;
+    //     &::before {
+    //         transform: scale(0);
+    //         opacity:0;       
+    //     }
+    // }
+
+    &:active > .box__img,
+    &:focus > .box__img{
         z-index: 3;
-        &::before {
-            transform: scale(0);
-            opacity:0;
+        animation: flipBox forwards;
+        & ~ .box__desc
+        & ~ .box__desc,
+        & ~ .box__desc{
+            z-index: 4;
+            background-color:#000000ad;
+            display:flex;
+            height: 100%;
+            left: 0;
+            margin: 0;
+            top: 0;
+            width: 100%;
+            transition: all 700ms ease-in;
+            animation: flipBoxTo1 350ms forwards;
         }
     }
-    &:hover + .box__desc{
-        display:inline-block;
-        z-index: 4;
-    }
     &__img{
-        max-width: 500px;
-        position: relative;
+        align-items: center;
         display: flex;
         justify-content: center;
-        align-items: center;
-        transition:all 200ms ease-in-out;  
+        max-width: 500px;
+        position: relative;
         z-index: 0;
-
+        &:active,
+        &:focus{
+            background-color:#000000ad;
+            display:flex;
+            height: 100%;
+            left: 0;
+            margin: 0;
+            top: 0;
+            width: 100%;
+        }
     }
     &__desc{
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
+        display:flex;
+        align-items: center;
+        color:#fff;
         display:none;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap:1.5rem;
+        height:0;
+        justify-content: center;
+        left:0;
+        margin:auto;
         max-width: 100%;
         padding:1rem;
-        color: $fntDarkBckgrd;
-        margin:auto
+        position:absolute;
+        top:100%;
+        width:100%;
+        z-index: 4;
+        transform: scaleX(0);
+        & h5{
+            color: $lighterBckgrd ;
+            font-family: 'Glacial_regular';
+            font-size: 1.5rem;
+        }
+        &__meta{
+            margin: 3rem 2rem;
+        }
     }
-} 
-
-@media screen and (max-width: 1503px){
-    .portfolio{
-        &__folioContainer{
-            max-width: 1002px;
+}
+.metaDesc{
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: justify;
+    &__meta{
+        display: flex;
+        gap:1rem;
+        word-wrap:inherit;
+        &__title{
+            color: color.scale($fntDarkBckgrd, $lightness : +50%);
+            font-family: 'ubuntu_condensedregular';
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        &__content{
+            display:inline-block;
+            font-family: 'ubunturegular';
+            font-size: 1rem;
+            color:#fff;
         }
     }
 }
@@ -149,3 +178,71 @@
         }
     }
 }
+
+@media screen and (max-width: 1503px){
+    .portfolio{
+        &__folioContainer{
+            max-width: 1002px;
+        }
+    }    
+}
+@media screen and (min-width: 1503px){
+    .box{
+        align-items: center;
+        border: thin solid $regularBckgrd;
+        display: flex;
+        justify-content: center;
+        max-width: 500px;
+        overflow:hidden;
+        padding:1px;
+        position: relative;
+        transition:all 200ms cubic-bezier(.49,.01,.23,1.75);
+        &::before{
+            background-color: $regularBckgrd;
+            content:'';
+            height:100%;
+            left:0;
+            max-width: 100%;
+            max-height:100%;
+            top:0;
+            opacity: .5;
+            position:absolute;
+            transition: all 250ms ease-out;
+            width: 100%;
+            z-index: 1;
+       }
+       &:hover > .box__img,
+       &:active > .box__img,
+       &:focus > .box__img{
+           z-index: 3;
+           animation: flipBox forwards;
+           & ~ .box__desc
+           & ~ .box__desc,
+           & ~ .box__desc{
+               z-index: 4;
+               background-color:#000000ad;
+               display:flex;
+               height: 100%;
+               left: 0;
+               margin: 0;
+               top: 0;
+               width: 100%;
+               transition: all 700ms ease-in;
+               animation: flipBoxTo1 350ms forwards;
+           }
+       }
+    // uniquement pour les larges écrans
+        &:hover,
+        &:active,
+        &:focus{
+            cursor: pointer;
+            transform: scale(1.1);
+            z-index: 3;
+            &::before {
+                transform: scale(0);
+                opacity:0;      
+            }
+        }
+    }
+}
+

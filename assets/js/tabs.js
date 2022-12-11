@@ -68,7 +68,6 @@
      window.addEventListener("hashchange", hashchange)                                 // On crée un écouteur sur le window pour détecter les changement de hash de manière à executer la fonction hashchange
 
      
-    // On appelle la fonction hashchange dés le démarrage de la page
     // fonction d'execution de la fonction de débugage : en fonction de la valeur du statut, affiche les valeurs de débugage dans la console. Ne s'excute que si la valeur est modifiée manuellement sur "true"
     function debugLanch() {
         if ( activationDebugStatus !== false ) {

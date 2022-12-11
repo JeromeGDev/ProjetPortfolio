@@ -8294,6 +8294,10 @@ readers do not read off random characters that represent icons */
   opacity: 1;
 }
 
+.illuminated {
+  color: #BBB476;
+}
+
 /* ================= Animation de l'introduction ================= */
 @keyframes openDoorsLeft {
   0% {
@@ -8474,6 +8478,33 @@ readers do not read off random characters that represent icons */
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes flipBox {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes flipBoxTo0 {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes flipBoxTo1 {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
 /* ========================= Mixins Flex =========================*/
@@ -9358,6 +9389,9 @@ li {
   width: 100%;
 }
 
+.article {
+  width: 100%;
+}
 .article__topBlock__title h4 {
   padding-bottom: 1rem;
   color: #fff;
@@ -9380,6 +9414,7 @@ li {
   align-content: space-around;
   margin: auto;
   width: 100%;
+  background-color: #BBB476;
 }
 .tabBlock__b__sb {
   display: flex;
@@ -9387,7 +9422,6 @@ li {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  align-content: space-around;
   min-width: 100%;
   width: 100%;
   background-color: #BBB476;
@@ -9400,20 +9434,50 @@ li {
 }
 
 .graphisme {
+  z-index: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 70%;
+  margin: 2rem auto 2rem auto;
+  background: rgba(187, 180, 118, 0.062745098);
+  padding: 1rem 1rem 4rem 1rem;
+}
+.graphisme h3 {
+  z-index: 1;
+  opacity: 100;
+  text-align: center;
+  color: #BBB476;
+  font-size: 2.25rem;
+}
+.graphisme h5 {
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-family: "Glacial_regular";
+  font-weight: 100;
 }
 .graphisme__skills {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  font-size: 2rem;
+  font-weight: lighter;
+  max-width: 70%;
+  margin: auto;
+  justify-content: center;
 }
-.graphisme__skills:nth-child(n+1) {
+.graphisme__skills :nth-child(n) {
   color: #BBB476;
+  text-align: center;
 }
-.graphisme__skills:nth-child(n+1) {
+.graphisme__skills :nth-child(2n) {
   color: #fff;
+  text-align: center;
+}
+.graphisme__skills blockquote {
+  font-family: "Glacial_regular";
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 1002px) {
@@ -9424,6 +9488,22 @@ li {
   }
   .landingPage__mainContainer__landingBlocks__img {
     width: 100%;
+  }
+  .article {
+    width: 100%;
+  }
+  .article__topBlock__title h4 {
+    padding-bottom: 1rem;
+    color: #fff;
+  }
+  .tabBlock__b {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .tabBlock__b__sb {
+    min-width: 40%;
+    max-width: 50%;
   }
 }
 @media screen and (max-width: 1503px) {
@@ -9717,106 +9797,213 @@ label {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 100%;
   padding-bottom: 2rem;
+  width: 100%;
 }
 .portfolio h2 {
   color: #888143;
-  text-align: center;
   margin: 0.5rem auto;
   padding: 0.5rem 1rem;
+  text-align: center;
 }
 .portfolio h4 {
   color: #888143;
-  text-align: center;
   margin: 0.5rem auto;
   padding: 0.5rem 1rem;
+  text-align: center;
 }
 .portfolio p {
-  text-align: center;
   padding: 0.5rem 1rem;
+  text-align: center;
 }
 .portfolio__folioContainer {
   display: flex;
-  max-width: 1503px;
   margin: auto;
+  max-width: 1503px;
 }
 .portfolio__folioContainer__imgBoxes {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  z-index: 0;
-  width: fit-content;
   height: auto;
   margin: auto;
-  border: thin solid black;
-  margin: 0 auto;
+  width: fit-content;
+  z-index: 0;
 }
 
 .box {
-  max-width: 500px;
-  position: relative;
+  align-items: center;
+  border: thin solid #434022;
   display: flex;
   justify-content: center;
-  align-items: center;
+  max-width: 500px;
+  overflow: hidden;
+  padding: 1px;
+  position: relative;
   transition: all 200ms cubic-bezier(0.49, 0.01, 0.23, 1.75);
 }
 .box::before {
+  background-color: #434022;
   content: "";
-  position: absolute;
-  max-width: 100%;
-  width: 100%;
-  max-height: 100%;
   height: 100%;
-  top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.3137254902);
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  opacity: 0.5;
+  position: absolute;
+  transition: all 250ms ease-out;
+  width: 100%;
   z-index: 1;
-  transition: all 750ms ease-out;
 }
-.box:hover, .box:active, .box:focus {
-  cursor: pointer;
-  transform: scale(1.1);
+.box:active > .box__img, .box:focus > .box__img {
   z-index: 3;
+  animation: flipBox forwards;
 }
-.box:hover::before, .box:active::before, .box:focus::before {
-  transform: scale(0);
-  opacity: 0;
-}
-.box:hover + .box__desc {
-  display: inline-block;
+.box:active > .box__img ~ .box__desc .box:active > .box__img ~ .box__desc, .box:active > .box__img ~ .box__desc, .box:active > .box__img ~ .box__desc .box:focus > .box__img ~ .box__desc, .box:focus > .box__img ~ .box__desc, .box:focus > .box__img ~ .box__desc .box:active > .box__img ~ .box__desc, .box:focus > .box__img ~ .box__desc .box:focus > .box__img ~ .box__desc {
   z-index: 4;
+  background-color: rgba(0, 0, 0, 0.6784313725);
+  display: flex;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  top: 0;
+  width: 100%;
+  transition: all 700ms ease-in;
+  animation: flipBoxTo1 350ms forwards;
 }
 .box__img {
-  max-width: 500px;
-  position: relative;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  transition: all 200ms ease-in-out;
+  max-width: 500px;
+  position: relative;
   z-index: 0;
 }
-.box__desc {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.box__img:active, .box__img:focus {
+  background-color: rgba(0, 0, 0, 0.6784313725);
+  display: flex;
   height: 100%;
+  left: 0;
+  margin: 0;
+  top: 0;
+  width: 100%;
+}
+.box__desc {
+  display: flex;
+  align-items: center;
+  color: #fff;
   display: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  height: 0;
+  justify-content: center;
+  left: 0;
+  margin: auto;
   max-width: 100%;
   padding: 1rem;
-  color: #888143;
-  margin: auto;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 4;
+  transform: scaleX(0);
+}
+.box__desc h5 {
+  color: #BBB476;
+  font-family: "Glacial_regular";
+  font-size: 1.5rem;
+}
+.box__desc__meta {
+  margin: 3rem 2rem;
 }
 
+.metaDesc {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: justify;
+}
+.metaDesc__meta {
+  display: flex;
+  gap: 1rem;
+  word-wrap: inherit;
+}
+.metaDesc__meta__title {
+  color: #ccc798;
+  font-family: "ubuntu_condensedregular";
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.metaDesc__meta__content {
+  display: inline-block;
+  font-family: "ubunturegular";
+  font-size: 1rem;
+  color: #fff;
+}
+
+@media screen and (max-width: 1002px) {
+  .portfolio__folioContainer {
+    max-width: 501px;
+  }
+}
 @media screen and (max-width: 1503px) {
   .portfolio__folioContainer {
     max-width: 1002px;
   }
 }
-@media screen and (max-width: 1002px) {
-  .portfolio__folioContainer {
-    max-width: 501px;
+@media screen and (min-width: 1503px) {
+  .box {
+    align-items: center;
+    border: thin solid #434022;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    overflow: hidden;
+    padding: 1px;
+    position: relative;
+    transition: all 200ms cubic-bezier(0.49, 0.01, 0.23, 1.75);
+  }
+  .box::before {
+    background-color: #434022;
+    content: "";
+    height: 100%;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    opacity: 0.5;
+    position: absolute;
+    transition: all 250ms ease-out;
+    width: 100%;
+    z-index: 1;
+  }
+  .box:hover > .box__img, .box:active > .box__img, .box:focus > .box__img {
+    z-index: 3;
+    animation: flipBox forwards;
+  }
+  .box:hover > .box__img ~ .box__desc .box:hover > .box__img ~ .box__desc, .box:hover > .box__img ~ .box__desc, .box:hover > .box__img ~ .box__desc .box:active > .box__img ~ .box__desc, .box:active > .box__img ~ .box__desc, .box:hover > .box__img ~ .box__desc .box:focus > .box__img ~ .box__desc, .box:focus > .box__img ~ .box__desc, .box:active > .box__img ~ .box__desc .box:hover > .box__img ~ .box__desc, .box:active > .box__img ~ .box__desc .box:active > .box__img ~ .box__desc, .box:active > .box__img ~ .box__desc .box:focus > .box__img ~ .box__desc, .box:focus > .box__img ~ .box__desc .box:hover > .box__img ~ .box__desc, .box:focus > .box__img ~ .box__desc .box:active > .box__img ~ .box__desc, .box:focus > .box__img ~ .box__desc .box:focus > .box__img ~ .box__desc {
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.6784313725);
+    display: flex;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    transition: all 700ms ease-in;
+    animation: flipBoxTo1 350ms forwards;
+  }
+  .box:hover, .box:active, .box:focus {
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 3;
+  }
+  .box:hover::before, .box:active::before, .box:focus::before {
+    transform: scale(0);
+    opacity: 0;
   }
 }
 .door {

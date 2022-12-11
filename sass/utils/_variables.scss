@@ -145,7 +145,7 @@ $fnth2DarkerBckgrd : saturate($fntDarkBckgrd,90);
 
 $btnWidth : 25rem;
 $btnHeight: 150px;
-$aspectRatio : math.div(250, 80);// ATTENTION : valeur entre 0 & 1
+$aspectRatio : 250/80;// ATTENTION : valeur entre 0 & 1
 /* ============================= Bouton Burger =============================  */
 $burgerSize : 2rem;
 $scaleHover : 1.1;
@@ -160,7 +160,7 @@ $crossCloserColor : #e4e4e4;
 /* ============================= Boutons isolés =============================  */
 // pour la mixin flexBtn
 $wide : 250px;
-$aspectRatio : 2.8; /* 250/90 */
+$aspectRatio : 250/90;
 
 
 /* ============================= Couleurs utilisées =============================  */

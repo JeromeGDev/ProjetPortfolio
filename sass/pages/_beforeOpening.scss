@@ -70,7 +70,7 @@
                 font-size: 2.5rem;
             }
             &__logo{
-                aspect-ratio: 1.4;
+                aspect-ratio: 14/10;
                 border-radius: 20px;
                 display:block;
                 margin: 2rem auto 2rem auto;
@@ -78,7 +78,7 @@
                 width: 90%;
                 transition: all 250ms ease-in;
                 & img{
-                    aspect-ratio: 200%; /* 500/250 */
+                    aspect-ratio: 200/100; /* 500/250 */
                     margin:auto;
                     max-width: 100%;
                     height: auto;

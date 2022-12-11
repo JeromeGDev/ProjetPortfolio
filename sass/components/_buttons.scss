@@ -56,7 +56,7 @@
     width:$burgerSize;
     z-index: 3;
     align-content: space-between;
-    animation : clickBurger infinite 15000s backwards infinite;
+    animation : clickBurger 15000s backwards infinite;
     &:hover{
         cursor: pointer;
         transform:scale($scaleHover);
@@ -175,7 +175,7 @@
 }
 .btnNav{
     @include flexBtn;
-    aspect-ratio: 5;
+    aspect-ratio: 5/1;
     background-color: $darkerBckgrd;
     width: 90%;
     margin-left:1rem;

@@ -4,12 +4,12 @@
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2022 Fonticons, Inc.
  */
-.fa, .withChild::after {
+.fa {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
   font-weight: var(--fa-style, 900);
 }
 
-.fa, .withChild::after,
+.fa,
 .fa-classic,
 .fa-sharp,
 .fas,
@@ -8238,7 +8238,6 @@ readers do not read off random characters that represent icons */
 /* ============================= Bouton Burger =============================  */
 /* ============================= Bouton Burger =============================  */
 /* ============================= Boutons isolés =============================  */
-/* 250/90 */
 /* ============================= Couleurs utilisées =============================  */
 /* ====== Couleurs dominantes et variantes  : pour chaque, de foncé à clair ======  */
 .displayNone {
@@ -8861,7 +8860,7 @@ li {
   justify-content: center;
   align-items: center;
   width: 25rem;
-  aspect-ratio: 2.8;
+  aspect-ratio: 250/90;
   width: 45%;
   font-family: "ubuntu_condensedregular", sans-serif;
   aspect-ratio: 900/90;
@@ -8881,7 +8880,7 @@ li {
   justify-content: center;
   align-items: center;
   width: 25rem;
-  aspect-ratio: 2.8;
+  aspect-ratio: 250/90;
   width: 100%;
   aspect-ratio: 900/90;
   background-color: #434022;
@@ -8912,7 +8911,7 @@ li {
   width: 2rem;
   z-index: 3;
   align-content: space-between;
-  animation: clickBurger infinite 15000s backwards infinite;
+  animation: clickBurger 15000s backwards infinite;
 }
 .btnBurger:hover {
   cursor: pointer;
@@ -9029,8 +9028,8 @@ li {
   justify-content: center;
   align-items: center;
   width: 25rem;
-  aspect-ratio: 2.8;
-  aspect-ratio: 5;
+  aspect-ratio: 250/90;
+  aspect-ratio: 5/1;
   background-color: black;
   width: 90%;
   margin-left: 1rem;
@@ -9230,32 +9229,6 @@ li {
   font-weight: 700;
 }
 
-.level-1 {
-  padding: 0.4rem 0.2rem 0.4rem 0.5rem;
-}
-
-.level-2 {
-  padding: 0.4rem 0.2rem 0.4rem 1rem;
-}
-
-.withChild {
-  position: relative;
-  transition: all 200ms ease-in-out;
-}
-.withChild:hover + ::after {
-  transform: scale 2;
-}
-
-.withChild::after {
-  display: inline-block;
-  font-size: 1.1rem;
-  content: "\f060";
-  position: absolute;
-  right: -1rem;
-  top: 25%;
-  transform: rotate(-90deg);
-}
-
 @media (min-width: 768px) {
   .navContainer {
     max-width: 48vw;
@@ -9369,7 +9342,7 @@ li {
   align-items: center;
   width: 45%;
   height: auto;
-  background-color: none;
+  background-color: transparent;
   transition: transform 150ms ease-in;
 }
 .landingPage__mainContainer__logoBlocks__container__lang__logo img {
@@ -10107,7 +10080,7 @@ label {
   font-size: 2.5rem;
 }
 .door__blocks__logoBlock__logo {
-  aspect-ratio: 1.4;
+  aspect-ratio: 14/10;
   border-radius: 20px;
   display: block;
   margin: 2rem auto 2rem auto;
@@ -10116,7 +10089,7 @@ label {
   transition: all 250ms ease-in;
 }
 .door__blocks__logoBlock__logo img {
-  aspect-ratio: 200%; /* 500/250 */
+  aspect-ratio: 200/100; /* 500/250 */
   margin: auto;
   max-width: 100%;
   height: auto;

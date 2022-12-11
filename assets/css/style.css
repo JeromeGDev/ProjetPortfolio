@@ -9836,6 +9836,7 @@ label {
   border: thin solid #434022;
   display: flex;
   justify-content: center;
+  margin: auto;
   max-width: 500px;
   overflow: hidden;
   padding: 1px;

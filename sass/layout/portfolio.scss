@@ -47,6 +47,7 @@
     border: thin solid $regularBckgrd;
     display: flex;
     justify-content: center;
+    margin:auto;
     max-width: 500px;
     overflow:hidden;
     padding:1px;
@@ -65,21 +66,7 @@
         transition: all 250ms ease-out;
         width: 100%;
         z-index: 1;
-   }
-   // uniquement pour les larges écrans
-    // &:hover,
-    // &:active,
-    // &:focus{
-    //     cursor:pointer;
-    //     transform: scale(1.1);
-    //     z-index: 3;
-    //     animation: flipBox 500ms forwards;
-    //     &::before {
-    //         transform: scale(0);
-    //         opacity:0;       
-    //     }
-    // }
-
+    }
     &:active > .box__img,
     &:focus > .box__img{
         z-index: 3;
